@@ -1,5 +1,6 @@
 import Map from "@/components/Map";
 import { loadRestaurants } from "@/lib/loadRestaurants";
+import Image from "next/image";
 
 export default function Home() {
   const restaurants = loadRestaurants();
