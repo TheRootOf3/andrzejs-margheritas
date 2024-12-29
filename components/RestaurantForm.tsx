@@ -62,7 +62,7 @@ export default function RestaurantForm() {
           id="name"
           name="name"
           required
-          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white"
+          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
         />
       </div>
 
@@ -75,7 +75,7 @@ export default function RestaurantForm() {
           id="address"
           name="address"
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
         />
       </div>
 
@@ -90,7 +90,7 @@ export default function RestaurantForm() {
             name="lat"
             step="any"
             required
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
           />
         </div>
         <div>
@@ -117,7 +117,7 @@ export default function RestaurantForm() {
           id="maps_url"
           name="maps_url"
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
         />
       </div>
 
@@ -130,7 +130,7 @@ export default function RestaurantForm() {
           id="group"
           name="group"
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
         />
       </div>
 
@@ -146,7 +146,7 @@ export default function RestaurantForm() {
           max="10"
           step="0.1"
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
         />
       </div>
 
@@ -158,7 +158,7 @@ export default function RestaurantForm() {
           id="notes"
           name="notes"
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
           rows={3}
         />
       </div>
