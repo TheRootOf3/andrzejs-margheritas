@@ -23,6 +23,14 @@ restaurants:
       lat: 51.5109322
       lng: -0.1228313
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJl5he88sEdkgRShzZK2n7_yY
+  - name: Pizzatopia ßå¬łąęóżź
+    address: Szewska 22, 31-009 Kraków, Poland
+    coordinates:
+      lat: 50.0628924
+      lng: 19.9338609
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJkbJLhA5bFkcR9dxapj9grYA
+    score: 3
+    notes: Pizzatopia ßå¬łąęóżź
   - name: Rudy's Pizza Napoletana - Tottenham Court Road
     address: 53-54 Tottenham Ct Rd, London W1T 2EQ, UK
     coordinates:
