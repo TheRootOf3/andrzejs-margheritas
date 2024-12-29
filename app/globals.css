@@ -24,9 +24,11 @@ body {
   border-radius: 0.5rem !important;
 }
 
-/* Remove the default InfoWindow tail/arrow */
+/* Style the InfoWindow tail/arrow */
 .gm-style .gm-style-iw-t::after {
-  display: none !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(4px) !important;
+  box-shadow: none !important;
 }
 
 /* Remove white containers and backgrounds */
