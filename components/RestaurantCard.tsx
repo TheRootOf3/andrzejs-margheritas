@@ -6,7 +6,7 @@ interface RestaurantCardProps {
 
 export function RestaurantCard({ restaurant }: RestaurantCardProps) {
   return (
-    <div className="p-2 rounded-lg hover:shadow-lg transition-shadow" style={{ background: 'rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(4px)' }}>
+    <div className="p-2 rounded-lg hover:shadow-lg">
       <h2 className="text-xl font-semibold text-white">{restaurant.name}</h2>
       <p className="text-white">{restaurant.address}</p>
       <div className="mt-2 space-y-1">
