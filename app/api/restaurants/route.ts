@@ -40,7 +40,6 @@ export async function POST(request: Request) {
       lat: ${r.coordinates.lat}
       lng: ${r.coordinates.lng}
     maps_url: "${r.maps_url}"
-    group: "${r.group}"
     score: ${r.score}
     notes: "${r.notes}"
     visited: "${r.visited}"`)
@@ -62,10 +61,9 @@ function isValidRestaurant(data: any): data is Restaurant {
     typeof data.coordinates?.lat === "number" &&
     typeof data.coordinates?.lng === "number" &&
     typeof data.maps_url === "string" &&
-    typeof data.group === "string" &&
     typeof data.score === "number" &&
     data.score >= 0 &&
-    data.score <= 10 &&
+    data.score <= 5 &&
     typeof data.notes === "string" &&
     typeof data.visited === "string" &&
     /^\d{4}-\d{2}-\d{2}$/.test(data.visited)
