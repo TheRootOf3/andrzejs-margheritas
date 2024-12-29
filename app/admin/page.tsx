@@ -25,3 +25,21 @@ export default async function AdminPage() {
     </div>
   )
 }
+import { auth } from "@/auth";
+import RestaurantForm from "@/components/RestaurantForm";
+import { redirect } from "next/navigation";
+
+export default async function AdminPage() {
+  const session = await auth();
+  
+  if (!session) {
+    redirect("/api/auth/signin");
+  }
+
+  return (
+    <main className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-marker mb-8">Add New Restaurant</h1>
+      <RestaurantForm />
+    </main>
+  );
+}
