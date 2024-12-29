@@ -207,47 +207,9 @@ export default function RestaurantForm() {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="lat" className="block text-sm font-medium mb-1">
-            Latitude
-          </label>
-          <input
-            type="number"
-            id="lat"
-            name="lat"
-            step="any"
-            required
-            className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
-          />
-        </div>
-        <div>
-          <label htmlFor="lng" className="block text-sm font-medium mb-1">
-            Longitude
-          </label>
-          <input
-            type="number"
-            id="lng"
-            name="lng"
-            step="any"
-            required
-            className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
-          />
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="maps_url" className="block text-sm font-medium mb-1">
-          Google Maps URL
-        </label>
-        <input
-          type="url"
-          id="maps_url"
-          name="maps_url"
-          required
-          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
-        />
-      </div>
+      <input type="hidden" id="lat" name="lat" required />
+      <input type="hidden" id="lng" name="lng" required />
+      <input type="hidden" id="maps_url" name="maps_url" required />
 
       <div>
         <label htmlFor="group" className="block text-sm font-medium mb-1">
