@@ -57,7 +57,8 @@ export default function Map({ restaurants }: MapProps) {
         zoom={13}
         onLoad={onLoad}
         options={{
-          streetViewControl: false
+          streetViewControl: false,
+          gestureHandling: "greedy"
         }}
       >
         {map &&
