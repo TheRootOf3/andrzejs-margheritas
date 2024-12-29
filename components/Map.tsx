@@ -35,12 +35,12 @@ export default function Map({ restaurants }: MapProps) {
 
   const getMarkerIcon = useCallback(() => {
     if (!map) return null;
-    
+
     return {
       url: `data:image/svg+xml,${encodeURIComponent(
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
           <circle cx="16" cy="16" r="15" fill="white"/>
-          <circle cx="16" cy="16" r="13" fill="#F5DEB3"/>
+          <circle cx="16" cy="16" r="13" fill="#567A90"/>
           <text y="24" x="16" font-size="24" text-anchor="middle">🍕</text>
         </svg>`
       )}`,
@@ -56,15 +56,16 @@ export default function Map({ restaurants }: MapProps) {
         zoom={13}
         onLoad={onLoad}
       >
-        {map && restaurants.map((restaurant) => (
-          <Marker
-            key={restaurant.name}
-            position={restaurant.coordinates}
-            title={restaurant.name}
-            onClick={() => setSelectedRestaurant(restaurant)}
-            icon={getMarkerIcon()}
-          />
-        ))}
+        {map &&
+          restaurants.map((restaurant) => (
+            <Marker
+              key={restaurant.name}
+              position={restaurant.coordinates}
+              title={restaurant.name}
+              onClick={() => setSelectedRestaurant(restaurant)}
+              icon={getMarkerIcon()}
+            />
+          ))}
 
         {selectedRestaurant && (
           <InfoWindow
