@@ -1,6 +1,6 @@
-import { load } from 'js-yaml';
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { load } from "js-yaml";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 export interface Restaurant {
   name: string;
@@ -20,10 +20,10 @@ interface RestaurantsData {
 }
 
 export function loadRestaurants(): Restaurant[] {
-  const filePath = join(process.cwd(), 'data', 'restaurants.yaml');
-  
+  const filePath = join(process.cwd(), "data", "restaurants.yaml");
+
   try {
-    const fileContents = readFileSync(filePath, 'utf8');
+    const fileContents = readFileSync(filePath, "utf8");
     const data = load(fileContents) as RestaurantsData;
     return data.restaurants || [];
   } catch (error) {
