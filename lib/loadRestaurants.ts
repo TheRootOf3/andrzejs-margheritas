@@ -11,7 +11,7 @@ export interface Restaurant {
   };
   maps_url: string;
   score: number;
-  notes: string;
+  notes?: string;
   visited?: string; // ISO date string format (YYYY-MM-DD)
 }
 

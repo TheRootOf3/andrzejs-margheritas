@@ -202,7 +202,6 @@ export default function RestaurantForm() {
             type="text"
             id="name"
             name="name"
-            required
             className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
           />
         </div>
@@ -215,7 +214,6 @@ export default function RestaurantForm() {
             type="text"
             id="address"
             name="address"
-            required
             className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
           />
         </div>
