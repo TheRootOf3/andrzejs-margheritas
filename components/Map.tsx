@@ -1,20 +1,23 @@
-import dynamic from 'next/dynamic';
-import { Restaurant } from '@/lib/loadRestaurants';
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
 
-const ClientMap = dynamic(
-  () => import('./ClientMap').then((mod) => mod.ClientMap),
-  { 
-    loading: () => <div className="w-full h-[600px] flex items-center justify-center bg-gray-100 rounded-lg">Loading map...</div>,
-    ssr: false 
-  }
-);
+const containerStyle = {
+  width: "100%",
+  height: "100vh",
+};
 
-interface MapProps {
-  restaurants: Restaurant[];
-  center?: { lat: number; lng: number };
-  zoom?: number;
-}
+const center = {
+  lat: 52.229676,
+  lng: 21.012229,
+};
 
-export default function Map(props: MapProps) {
-  return <ClientMap {...props} />;
+export default function Map() {
+  return (
+    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={13}
+      />
+    </LoadScript>
+  );
 }
