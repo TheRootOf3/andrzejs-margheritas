@@ -26,7 +26,7 @@ interface MapProps {
 }
 
 export default function Map({ restaurants }: MapProps) {
-  const { focusedCoordinates } = useMapContext();
+  const { focusedCoordinates, showAllRestaurants } = useMapContext();
   const [selectedRestaurant, setSelectedRestaurant] =
     useState<Restaurant | null>(null);
 
@@ -35,6 +35,16 @@ export default function Map({ restaurants }: MapProps) {
   const onLoad = useCallback((map: google.maps.Map) => {
     setMap(map);
   }, []);
+
+  useEffect(() => {
+    if (map && showAllRestaurants) {
+      const bounds = new google.maps.LatLngBounds();
+      restaurants.forEach((restaurant) => {
+        bounds.extend(restaurant.coordinates);
+      });
+      map.fitBounds(bounds, { padding: 50 });
+    }
+  }, [map, showAllRestaurants, restaurants]);
 
   const getMarkerIcon = useCallback(
     (restaurant: Restaurant) => {

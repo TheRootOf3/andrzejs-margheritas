@@ -16,7 +16,7 @@ interface RestaurantListProps {
 
 export default function RestaurantList({ restaurants }: RestaurantListProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const { setMapFocus } = useMapContext();
+  const { setMapFocus, setShowAllRestaurants } = useMapContext();
 
   return (
     <div className="fixed bottom-4 left-4 z-10 min-w-[280px] max-w-[90vw]">
@@ -50,7 +50,10 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
         >
           <div className="space-y-4">
             <button
-              onClick={() => setMapFocus(defaultCenter)}
+              onClick={() => {
+                setMapFocus(null);
+                setShowAllRestaurants(true);
+              }}
               className="w-full bg-white/10 hover:bg-white/20 rounded-lg py-2 px-4 text-sm font-marker transition-colors"
             >
               Show All Restaurants
