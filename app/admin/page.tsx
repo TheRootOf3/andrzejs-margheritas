@@ -1,6 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import RestaurantForm from "@/components/RestaurantForm";
+import GoogleMapsProvider from "@/components/GoogleMapsProvider";
 import { redirect } from "next/navigation";
 
 export default async function AdminPage() {
@@ -26,7 +27,9 @@ export default async function AdminPage() {
           </a>
         </div>
       </div>
-      <RestaurantForm />
+      <GoogleMapsProvider>
+        <RestaurantForm />
+      </GoogleMapsProvider>
     </main>
   );
 }
