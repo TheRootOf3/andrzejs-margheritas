@@ -3,10 +3,6 @@
 import { Restaurant } from "@/lib/loadRestaurants";
 import { useState } from "react";
 
-const defaultCenter = {
-  lat: 51.515,
-  lng: -0.135,
-};
 import { useMapContext } from "@/contexts/MapContext";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
@@ -39,7 +35,7 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
           )}
         </div>
       </button>
-      
+
       {isOpen && (
         <div
           className="mt-2 rounded-lg p-4 max-h-[50vh] sm:max-h-[60vh] overflow-y-auto"
@@ -59,36 +55,49 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
               Show All Restaurants
             </button>
             <ul className="space-y-2">
-            {restaurants.map((restaurant, index) => (
-              <li
-                key={index}
-                className="text-white p-2 hover:bg-white/10 rounded-lg cursor-pointer flex justify-between items-start gap-2"
-                onClick={() => setMapFocus(restaurant.coordinates)}
-              >
-                <div>
-                  <div>
-                    <div className="font-marker">{restaurant.name}</div>
-                    {restaurant.score && (
-                      <div className="text-xs mt-0.5">
-                        {Array(restaurant.score).fill("🍕").join("")}
-                      </div>
-                    )}
-                  </div>
-                  <div className="text-sm text-gray-300">{restaurant.address}</div>
-                </div>
-                <a
-                  href={restaurant.maps_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 bg-white/10 hover:bg-white/20 rounded p-1.5 transition-colors"
-                  onClick={(e) => e.stopPropagation()}
+              {restaurants.map((restaurant, index) => (
+                <li
+                  key={index}
+                  className="text-white p-2 hover:bg-white/10 rounded-lg cursor-pointer flex justify-between items-start gap-2"
+                  onClick={() => setMapFocus(restaurant.coordinates)}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                  </svg>
-                </a>
-              </li>
-            ))}
+                  <div>
+                    <div>
+                      <div className="font-marker">{restaurant.name}</div>
+                      {restaurant.score && (
+                        <div className="text-xs mt-0.5">
+                          {Array(restaurant.score).fill("🍕").join("")}
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-300">
+                      {restaurant.address}
+                    </div>
+                  </div>
+                  <a
+                    href={restaurant.maps_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 bg-white/10 hover:bg-white/20 rounded p-1.5 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

@@ -16,6 +16,14 @@ restaurants:
     score: 3
     notes: Neither fast-food, nor proper Neapolitan pizza. Dull knives.
     visited: '2024-12-28'
+  - name: Bürger's Moosach München
+    address: Bunzlauer Str. 25, 80992 München, Germany
+    coordinates:
+      lat: 48.1812073
+      lng: 11.5099366
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJxcxBeqp3nkcRQsZKCJ1bs2o
+    score: 3
+    notes: Cheap, quick and good! Recommended with Apfelshorle🧃
   - name: Franco Manca | Cambridge
     address: 15 Market Hill, Cambridge CB2 3NP, UK
     coordinates:
@@ -31,6 +39,14 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJiQRo3jAbdkgRtEwh9iGpvM8
     score: 4
     notes: Good Franco Manca spot, used to go there a lot!
+  - name: Garden Pizza & Salad Bar
+    address: Vase Stajića 27, Novi Sad 21000, Serbia
+    coordinates:
+      lat: 45.2494187
+      lng: 19.8425312
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJyX4pr1cQW0cR0gGGSRnfjIQ
+    score: 3
+    notes: Good pizza, nice people.
   - name: ICCO - "The People's Pizzeria"
     address: 46 Goodge St, London W1T 4LU, UK
     coordinates:
@@ -83,8 +99,8 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJaYIUUk9u5kcRfAhRNL_ZJgw
     score: 4
     notes: >-
-      Great place, good to arrive there when it's openning. Nice view at the top
-      floor.
+      Great place, good to arrive there when it's about to open. Nice view at
+      the top floor.
   - name: Pizza by Sartorelli's
     address: 21, Covered Market, Oxford OX1 3DZ, UK
     coordinates:
