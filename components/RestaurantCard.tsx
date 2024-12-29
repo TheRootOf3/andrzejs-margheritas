@@ -11,11 +11,13 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
         {restaurant.name}
       </h2>
       <div className="mt-2 space-y-1">
-        <div className="p-2 bg-white/10 rounded-lg">
-          <p className="text-sm text-white font-medium text-center">
-            {restaurant.notes}
-          </p>
-        </div>
+        {restaurant.notes && (
+          <div className="p-2 bg-white/10 rounded-lg">
+            <p className="text-sm text-white font-medium text-center">
+              {restaurant.notes}
+            </p>
+          </div>
+        )}
         <div className="space-y-1 text-center">
           {restaurant.score !== undefined && (
             <>
