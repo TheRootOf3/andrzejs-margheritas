@@ -1,4 +1,5 @@
-import { auth } from "@/auth";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 import { Restaurant } from "@/lib/loadRestaurants";
 import { writeFileSync } from "fs";
 import { load } from "js-yaml";
@@ -6,7 +7,7 @@ import { join } from "path";
 import { readFileSync } from "fs";
 
 export async function POST(request: Request) {
-  const session = await auth();
+  const session = await getServerSession(authOptions);
 
   if (!session) {
     return new Response("Unauthorized", { status: 401 });
