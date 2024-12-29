@@ -126,13 +126,13 @@ export default function RestaurantForm() {
       notes?: string;
       visited?: string;
     } = {
-      name: formData.get("name"),
-      address: formData.get("address"),
+      name: formData.get("name") as string,
+      address: formData.get("address") as string,
       coordinates: {
         lat: parseFloat(formData.get("lat") as string),
         lng: parseFloat(formData.get("lng") as string),
       },
-      maps_url: formData.get("maps_url"),
+      maps_url: formData.get("maps_url") as string,
     };
 
     const score = formData.get("score");
