@@ -1,10 +1,50 @@
 restaurants:
-  - name: "Example Pizza Place"
-    address: "123 Pizza Street"
+  - name: "50 Kalò di Ciro Salvo"
+    address: "7 Northumberland Ave, London WC2N 5BY"
     coordinates:
-      lat: 52.229676
-      lng: 21.012229
-    maps_url: "https://goo.gl/maps/example"
-    group: "Local"
+      lat: 51.507222
+      lng: -0.124722
+    maps_url: "https://goo.gl/maps/YqQZB9RZepE8QLWP6"
+    group: "Neapolitan"
+    score: 9.0
+    notes: "Authentic Neapolitan pizza, amazing dough"
+
+  - name: "Santa Maria"
+    address: "15 St Mary's Rd, London W5 5RA"
+    coordinates:
+      lat: 51.509895
+      lng: -0.317456
+    maps_url: "https://goo.gl/maps/VL9ZQxQyPxvzr5Yu6"
+    group: "Neapolitan"
+    score: 9.2
+    notes: "One of London's best Neapolitan pizzas"
+
+  - name: "L'Antica Pizzeria da Michele"
+    address: "199 Baker St, London NW1 6UY"
+    coordinates:
+      lat: 51.523611
+      lng: -0.158333
+    maps_url: "https://goo.gl/maps/8YQ8YZ5Z8Z2Q8Z2Q8"
+    group: "Neapolitan"
+    score: 8.8
+    notes: "Famous Naples pizzeria's London branch"
+
+  - name: "Franco Manca Soho"
+    address: "51 Berwick St, London W1F 8SJ"
+    coordinates:
+      lat: 51.514444
+      lng: -0.135833
+    maps_url: "https://goo.gl/maps/QZ2Z2Z2Z2Z2Z2Z2Z2"
+    group: "Sourdough"
     score: 8.5
-    notes: "Great classic pizza"
+    notes: "Great sourdough pizza at reasonable prices"
+
+  - name: "Pizza Pilgrims"
+    address: "11 Dean St, London W1D 3RP"
+    coordinates:
+      lat: 51.515278
+      lng: -0.133889
+    maps_url: "https://goo.gl/maps/3Z3Z3Z3Z3Z3Z3Z3Z3"
+    group: "Neapolitan"
+    score: 8.7
+    notes: "Started as a food truck, now a London institution"
