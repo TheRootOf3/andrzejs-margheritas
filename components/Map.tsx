@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 import type { Restaurant } from "@/lib/loadRestaurants";
 
@@ -21,8 +21,19 @@ interface MapProps {
 export default function Map({ restaurants }: MapProps) {
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
 
+  const getMarkerIcon = useCallback(() => ({
+    url: `data:image/svg+xml,${encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+        <circle cx="16" cy="16" r="16" fill="#F5DEB3"/>
+        <text y="24" x="16" font-size="24" text-anchor="middle">🍕</text>
+      </svg>`
+    )}`,
+    scaledSize: new google.maps.Size(32, 32),
+  }), []);
+
   return (
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
+      {isLoaded => (
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
@@ -34,15 +45,7 @@ export default function Map({ restaurants }: MapProps) {
             position={restaurant.coordinates}
             title={restaurant.name}
             onClick={() => setSelectedRestaurant(restaurant)}
-            icon={{
-              url: `data:image/svg+xml,${encodeURIComponent(
-                `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-                  <circle cx="16" cy="16" r="16" fill="#F5DEB3"/>
-                  <text y="24" x="16" font-size="24" text-anchor="middle">🍕</text>
-                </svg>`
-              )}`,
-              scaledSize: new window.google.maps.Size(32, 32),
-            }}
+            icon={getMarkerIcon()}
           />
         ))}
 
