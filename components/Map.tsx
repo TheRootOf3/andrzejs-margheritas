@@ -33,7 +33,6 @@ export default function Map({ restaurants }: MapProps) {
 
   return (
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
-      {isLoaded => (
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
