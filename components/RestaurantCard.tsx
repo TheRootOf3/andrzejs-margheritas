@@ -8,7 +8,6 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
   return (
     <div className="py-2 px-4 rounded-lg hover:shadow-lg">
       <h2 className="text-xl font-semibold text-white">{restaurant.name}</h2>
-      <p className="text-white font-medium">{restaurant.address}</p>
       <div className="mt-2 space-y-1">
         <div className="p-2 bg-white/10 rounded-lg">
           <p className="text-sm text-white font-medium">
