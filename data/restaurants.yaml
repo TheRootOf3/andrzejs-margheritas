@@ -5,6 +5,6 @@ restaurants:
       lat: 51.5194924
       lng: -0.1334601
     maps_url: "https://www.google.com/maps/place/?q=place_id:ChIJMUvCdfsbdkgR8VpHxXjosEg"
-    score: 10
+    score: 5
     notes: "Fantastic Neapolitan pizza, really big portions!"
     visited: "2024-12-29"

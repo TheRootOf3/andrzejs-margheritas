@@ -17,7 +17,7 @@ export default function Home() {
           }}
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-4 sm:px-6 md:px-8 pt-3 sm:pt-4 md:pt-6 font-marker whitespace-nowrap">
-            Andrzej&apos;s Margheritas
+            🍕 Andrzej&apos;s Margheritas 🍕
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl px-4 pb-3 sm:pb-4 md:pb-6 font-marker whitespace-nowrap">
             Yeah, I really do like them.

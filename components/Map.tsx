@@ -40,7 +40,8 @@ export default function Map({ restaurants }: MapProps) {
     return {
       url: `data:image/svg+xml,${encodeURIComponent(
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="52" height="52">
-          <circle cx="26" cy="26" r="26" fill="rgba(0, 0, 0, 0.6)"/>
+          <circle cx="26" cy="26" r="26" fill="rgba(0, 0, 0, 0.5)"/>
+          <circle cx="26" cy="26" r="22" stroke="green" stroke-width="2" fill="rgba(0, 0, 0, 0.5)"/>
           <text y="36" x="26" font-size="32" text-anchor="middle">🍕</text>
         </svg>`
       )}`,
@@ -57,7 +58,7 @@ export default function Map({ restaurants }: MapProps) {
         onLoad={onLoad}
         options={{
           streetViewControl: false,
-          gestureHandling: "greedy"
+          gestureHandling: "greedy",
         }}
       >
         {map &&
