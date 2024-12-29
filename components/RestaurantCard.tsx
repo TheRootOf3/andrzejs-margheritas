@@ -11,6 +11,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
       <p className="text-black">{restaurant.address}</p>
       <div className="mt-2 space-y-1">
         <p className="text-sm text-black">Score: {restaurant.score}/10</p>
+        <p className="text-sm text-black">Notes: {restaurant.notes}</p>
         <p className="text-sm text-black">Visited: {restaurant.visited}</p>
         <div className="flex justify-end">
           <a
