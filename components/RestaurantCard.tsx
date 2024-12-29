@@ -24,9 +24,12 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
               {/* <p className="text-sm text-white font-medium"> */}
               {/* Score: {restaurant.score}/5 */}
               {/* </p> */}
-              <p className="text-sm text-white font-medium">
-                Rating: {Array(restaurant.score).fill("🍕").join("")}
-              </p>
+              <div className="text-sm text-white font-medium">
+                Rating:
+                <div className="text-xs mt-0.5">
+                  {Array(restaurant.score).fill("🍕").join("")}
+                </div>
+              </div>
             </>
           )}
         </div>
