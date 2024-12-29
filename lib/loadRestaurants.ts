@@ -26,7 +26,7 @@ export function loadRestaurants(): Restaurant[] {
     const fileContents = readFileSync(filePath, "utf8");
     const data = load(fileContents) as RestaurantsData;
     return data.restaurants || [];
-  } catch (error) {
+  } catch (_error) {
     // If file doesn't exist or is empty, return empty array
     return [];
   }
