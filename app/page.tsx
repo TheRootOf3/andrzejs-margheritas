@@ -22,12 +22,22 @@ export default function Home() {
           <p className="text-sm sm:text-base md:text-lg lg:text-xl px-4 pb-3 sm:pb-4 md:pb-6 font-marker whitespace-nowrap">
             Yeah, I really do like them.
           </p>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl px-4 pb-3 sm:pb-4 md:pb-6 font-marker">
+        </div>
+      </div>
+      <Map restaurants={restaurants} />
+      <div className="fixed bottom-4 left-4 z-10">
+        <div
+          className="text-white rounded-lg px-4 py-2"
+          style={{
+            background: "rgba(0, 0, 0, 0.6)",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          <p className="text-sm sm:text-base font-marker">
             {restaurants.length} places discovered
           </p>
         </div>
       </div>
-      <Map restaurants={restaurants} />
     </main>
   );
 }
