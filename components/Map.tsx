@@ -86,13 +86,8 @@ export default function Map({ restaurants }: MapProps) {
         options={{
           streetViewControl: false,
           gestureHandling: "greedy",
-          animation: google.maps.Animation.SMOOTH,
         }}
         onLoad={onLoad}
-        options={{
-          streetViewControl: false,
-          gestureHandling: "greedy",
-        }}
       >
         {map &&
           restaurants.map((restaurant) => (
