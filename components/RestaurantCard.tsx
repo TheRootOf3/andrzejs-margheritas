@@ -13,14 +13,15 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
         <p className="text-sm text-white font-medium italic">{restaurant.notes}</p>
         <p className="text-sm text-white font-medium">Score: {restaurant.score}/10</p>
         <p className="text-sm text-white font-medium">Visited: {restaurant.visited}</p>
-        <div className="flex justify-end">
+        <div className="flex justify-end mt-2">
           <a
             href={restaurant.maps_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-600 text-sm"
+            className="bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium inline-flex items-center gap-1"
           >
-            View on Maps →
+            View on Maps
+            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
