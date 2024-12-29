@@ -34,6 +34,14 @@ export default function Map({ restaurants }: MapProps) {
             position={restaurant.coordinates}
             title={restaurant.name}
             onClick={() => setSelectedRestaurant(restaurant)}
+            icon={{
+              url: `data:image/svg+xml,${encodeURIComponent(
+                `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+                  <text y="24" font-size="24">🍕</text>
+                </svg>`
+              )}`,
+              scaledSize: new window.google.maps.Size(32, 32),
+            }}
           />
         ))}
 
