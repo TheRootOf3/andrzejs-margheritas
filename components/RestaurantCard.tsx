@@ -21,11 +21,11 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
         <div className="space-y-1 text-center">
           {restaurant.score !== undefined && (
             <>
+              {/* <p className="text-sm text-white font-medium"> */}
+              {/* Score: {restaurant.score}/5 */}
+              {/* </p> */}
               <p className="text-sm text-white font-medium">
-                Score: {restaurant.score}/5
-              </p>
-              <p className="text-sm text-white font-medium">
-                {Array(restaurant.score).fill("🍕").join("")}
+                Rating: {Array(restaurant.score).fill("🍕").join("")}
               </p>
             </>
           )}
