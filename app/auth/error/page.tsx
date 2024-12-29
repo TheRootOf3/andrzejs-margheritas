@@ -1,4 +1,5 @@
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 export default function ErrorPage() {
   return (
@@ -8,12 +9,12 @@ export default function ErrorPage() {
         <p className="mb-4">
           Sorry, you are not authorized to access this application. Only specific GitHub users are allowed.
         </p>
-        <a
+        <Link
           href="/"
           className="inline-block bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors font-marker"
         >
           Return Home
-        </a>
+        </Link>
       </div>
     </div>
   );
