@@ -106,7 +106,6 @@ export default function RestaurantForm() {
         lng: parseFloat(formData.get("lng") as string),
       },
       maps_url: formData.get("maps_url"),
-      group: formData.get("group"),
       score: parseFloat(formData.get("score") as string),
       notes: formData.get("notes"),
       visited: formData.get("visited") as string,
@@ -212,18 +211,6 @@ export default function RestaurantForm() {
       <input type="hidden" id="lng" name="lng" required />
       <input type="hidden" id="maps_url" name="maps_url" required />
 
-      <div>
-        <label htmlFor="group" className="block text-sm font-medium mb-1">
-          Group
-        </label>
-        <input
-          type="text"
-          id="group"
-          name="group"
-          required
-          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
-        />
-      </div>
 
       <div>
         <label htmlFor="score" className="block text-sm font-medium mb-1">
