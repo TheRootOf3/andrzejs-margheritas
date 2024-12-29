@@ -25,10 +25,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
               {/* Score: {restaurant.score}/5 */}
               {/* </p> */}
               <div className="text-sm text-white font-medium">
-                Rating:
-                <div className="text-xs mt-0.5">
-                  {Array(restaurant.score).fill("🍕").join("")}
-                </div>
+                🍕 Score: {restaurant.score}/5
               </div>
             </>
           )}
