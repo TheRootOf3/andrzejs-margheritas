@@ -31,13 +31,20 @@ export default function RestaurantForm() {
 
     setIsLoading(true);
     try {
+      console.log('Fetching predictions for:', value);
       const response = await fetch(`/api/places/autocomplete?input=${encodeURIComponent(value)}`);
       const data = await response.json();
       
-      if (data.predictions) {
+      console.log('Autocomplete response:', data);
+      
+      if (response.ok && data.predictions) {
         setPredictions(data.predictions);
+      } else {
+        console.error('Error in autocomplete response:', data);
+        setError(data.error || "Failed to fetch suggestions");
       }
     } catch (err) {
+      console.error('Error in handleSearchInput:', err);
       setError("Failed to fetch suggestions");
     } finally {
       setIsLoading(false);
