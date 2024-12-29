@@ -3,7 +3,6 @@ import { authOptions } from "@/auth";
 import { Restaurant } from "@/lib/loadRestaurants";
 import { load, dump } from "js-yaml";
 import { Octokit } from "@octokit/rest";
-import { encode } from "base-64";
 import { writeFileSync, readFileSync } from "fs";
 import { join } from "path";
 
@@ -102,7 +101,7 @@ export async function POST(request: Request) {
       repo: process.env.GITHUB_REPO!,
       path: 'data/restaurants.yaml',
       message: `Add restaurant: ${newRestaurant.name}`,
-      content: encode(yamlContent),
+      content: Buffer.from(yamlContent).toString('base64'),
       branch: branchName,
       sha: (fileData as any).sha,
     });
