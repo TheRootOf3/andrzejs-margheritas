@@ -19,12 +19,9 @@ export async function GET(request: Request) {
       : `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(
           query
         )}&type=restaurant&key=${process.env.GOOGLE_PLACES_API_KEY}`;
-    
-    console.log('Calling Google Places API:', url);
+        
     const response = await fetch(url);
     const data = await response.json();
-    
-    console.log('Google Places API response:', data);
 
     if (!response.ok) {
       throw new Error(`Google Places API error: ${data.error_message || 'Unknown error'}`);

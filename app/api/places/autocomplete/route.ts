@@ -13,12 +13,8 @@ export async function GET(request: Request) {
       input
     )}&types=establishment&location=51.5074,0.1278&radius=50000&key=${process.env.GOOGLE_PLACES_API_KEY}`;
     
-    console.log('Fetching from URL:', url);
-    
     const response = await fetch(url);
     const data = await response.json();
-    
-    console.log('Google Places API response:', data);
     
     if (!response.ok) {
       throw new Error(`Google Places API error: ${data.error_message || 'Unknown error'}`);
