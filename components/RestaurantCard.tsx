@@ -31,7 +31,10 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
           )}
         </div>
         <p className="text-sm text-white font-medium text-center">
-          📅 {restaurant.visited ? `Visited: ${restaurant.visited}` : "Long, long time ago!"}
+          📅{" "}
+          {restaurant.visited
+            ? `Visited: ${restaurant.visited}`
+            : "Visited: Long, long time ago!"}
         </p>
         <div className="flex justify-end mt-2">
           <a
