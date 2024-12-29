@@ -59,7 +59,12 @@ export default function Map({ restaurants }: MapProps) {
           <circle cx="${centerPoint}" cy="${centerPoint}" r="${centerPoint}" fill="rgba(0, 0, 0, 0.5)"/>
           <circle cx="${centerPoint}" cy="${centerPoint}" r="${
             centerPoint - 4
-          }" stroke="white" stroke-width="2" fill="rgba(0, 0, 0, 0.5)"/>
+          }" stroke="${
+            restaurant.score === 5 ? '#FFD700' :  // Gold
+            restaurant.score === 4 ? '#C0C0C0' :  // Silver
+            restaurant.score === 3 ? '#CD7F32' :  // Bronze
+            'white'
+          }" stroke-width="2" fill="rgba(0, 0, 0, 0.5)"/>
           <text y="${
             centerPoint + 10
           }" x="${centerPoint}" font-size="30" text-anchor="middle">🍕</text>
