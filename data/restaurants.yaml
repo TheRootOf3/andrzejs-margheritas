@@ -8,6 +8,13 @@ restaurants:
     score: 3
     notes: Neither fast-food, nor proper Neapolitan pizza. Dull knives.
     visited: '2024-12-28'
+  - name: Franco Manca | Cambridge
+    address: 15 Market Hill, Cambridge CB2 3NP, UK
+    coordinates:
+      lat: 52.2058014
+      lng: 0.1191334
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJq8TblL1w2EcRvkLIai7NCPk
+    score: 3
   - name: Franco Manca | Russell Square
     address: 4 Bernard St, Russell Sq, London WC1N 1LJ, UK
     coordinates:
