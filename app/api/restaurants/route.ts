@@ -4,6 +4,8 @@ import { Restaurant } from "@/lib/loadRestaurants";
 import { load, dump } from "js-yaml";
 import { Octokit } from "@octokit/rest";
 import { encode } from "base-64";
+import { writeFileSync, readFileSync } from "fs";
+import { join } from "path";
 
 export async function POST(request: Request) {
   const session = await getServerSession(authOptions);
@@ -20,12 +22,42 @@ export async function POST(request: Request) {
       return new Response("Invalid restaurant data", { status: 400 });
     }
 
-    // Initialize Octokit with GitHub token
+    // Handle development mode
+    if (process.env.NEXT_PUBLIC_DEV_MODE === 'true') {
+      const filePath = join(process.cwd(), 'data', 'restaurants.yaml');
+      const currentContent = readFileSync(filePath, 'utf8');
+      let data = load(currentContent) as { restaurants: Restaurant[] };
+      
+      if (!data.restaurants) {
+        data.restaurants = [];
+      }
+      
+      // Add new restaurant
+      data.restaurants.push(newRestaurant);
+      
+      // Sort restaurants by name
+      data.restaurants.sort((a, b) => a.name.localeCompare(b.name));
+      
+      // Write directly to file
+      const yamlContent = dump({ restaurants: data.restaurants });
+      writeFileSync(filePath, yamlContent, 'utf8');
+      
+      return new Response(JSON.stringify({ 
+        message: "Restaurant added successfully in development mode",
+        devMode: true
+      }), { 
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    }
+
+    // Production mode - Create PR
     const octokit = new Octokit({
       auth: process.env.GITHUB_TOKEN,
     });
 
-    // Get current content of restaurants.yaml
     const { data: fileData } = await octokit.repos.getContent({
       owner: process.env.GITHUB_OWNER!,
       repo: process.env.GITHUB_REPO!,

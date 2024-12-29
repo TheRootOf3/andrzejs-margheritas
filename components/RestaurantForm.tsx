@@ -158,10 +158,13 @@ export default function RestaurantForm() {
       
       // Show success message
       setError("");
-      alert(`Restaurant added successfully! A pull request has been created.\n\nYou can view it at: ${responseData.prUrl}`);
-      
-      // Open the PR URL in a new tab
-      window.open(responseData.prUrl, '_blank');
+      if (responseData.devMode) {
+        alert('Restaurant added successfully in development mode!');
+      } else {
+        alert(`Restaurant added successfully! A pull request has been created.\n\nYou can view it at: ${responseData.prUrl}`);
+        // Open the PR URL in a new tab
+        window.open(responseData.prUrl, '_blank');
+      }
       
       // Reset form
       formRef.current?.reset();
