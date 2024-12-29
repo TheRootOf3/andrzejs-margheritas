@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import GitHub from "next-auth/providers/github"
 
-const handler = NextAuth({
+const config = {
   providers: [
     GitHub({
       clientId: process.env.GITHUB_ID!,
@@ -20,7 +20,9 @@ const handler = NextAuth({
     error: '/auth/error',
     signIn: '/auth/signin',
   }
-})
+}
+
+const handler = NextAuth(config)
 
 export const { auth } = handler
-export const { GET, POST } = handler
+export const { handlers: { GET, POST } } = handler
