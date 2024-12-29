@@ -1,4 +1,5 @@
 import Map from "@/components/Map";
+import Navigation from "@/components/Navigation";
 import { loadRestaurants } from "@/lib/loadRestaurants";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
   
   return (
     <main className="relative">
+      <Navigation />
       <div className="absolute left-1/2 -translate-x-1/2 top-8 z-10">
         <div className="flex flex-col items-center text-white bg-black/50 backdrop-blur-sm rounded-lg">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-4 sm:px-6 md:px-8 pt-3 sm:pt-4 md:pt-6 font-marker whitespace-nowrap">

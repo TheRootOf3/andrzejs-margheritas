@@ -62,7 +62,7 @@ export default function RestaurantForm() {
           id="name"
           name="name"
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white"
         />
       </div>
 
@@ -165,7 +165,7 @@ export default function RestaurantForm() {
 
       <button
         type="submit"
-        className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
+        className="bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg transition-colors font-marker"
       >
         Add Restaurant
       </button>
