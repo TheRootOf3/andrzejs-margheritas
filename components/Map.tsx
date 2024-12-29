@@ -11,7 +11,7 @@ import type { Restaurant } from "@/lib/loadRestaurants";
 
 const containerStyle = {
   width: "100%",
-  height: "100vh",
+  height: "80vh",
 };
 
 const center = {
