@@ -21,10 +21,20 @@ export async function POST(request: Request) {
       return new Response("Invalid restaurant data", { status: 400 });
     }
 
-    // Read existing restaurants
+    // Read existing restaurants or create new data structure
     const filePath = join(process.cwd(), 'data', 'restaurants.yaml');
-    const fileContents = readFileSync(filePath, 'utf8');
-    const data = load(fileContents) as { restaurants: Restaurant[] };
+    let data: { restaurants: Restaurant[] };
+    
+    try {
+      const fileContents = readFileSync(filePath, 'utf8');
+      data = load(fileContents) as { restaurants: Restaurant[] };
+      if (!data.restaurants) {
+        data.restaurants = [];
+      }
+    } catch (error) {
+      // If file doesn't exist or is empty, create new data structure
+      data = { restaurants: [] };
+    }
     
     // Add new restaurant
     data.restaurants.push(newRestaurant);
