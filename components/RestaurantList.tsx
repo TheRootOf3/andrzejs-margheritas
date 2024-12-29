@@ -2,6 +2,7 @@
 
 import { Restaurant } from "@/lib/loadRestaurants";
 import { useState } from "react";
+import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
 interface RestaurantListProps {
   restaurants: Restaurant[];
@@ -20,9 +21,16 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
           backdropFilter: "blur(4px)",
         }}
       >
-        <p className="text-sm sm:text-base font-marker">
-          {restaurants.length} places discovered
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="text-sm sm:text-base font-marker">
+            {restaurants.length} places discovered
+          </p>
+          {isOpen ? (
+            <ChevronDownIcon className="h-5 w-5" />
+          ) : (
+            <ChevronUpIcon className="h-5 w-5" />
+          )}
+        </div>
       </button>
       
       {isOpen && (
