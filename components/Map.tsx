@@ -38,13 +38,13 @@ export default function Map({ restaurants }: MapProps) {
 
     return {
       url: `data:image/svg+xml,${encodeURIComponent(
-        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-          <circle cx="16" cy="16" r="15" fill="white"/>
-          <circle cx="16" cy="16" r="13" fill="#567A90"/>
-          <text y="24" x="16" font-size="24" text-anchor="middle">🍕</text>
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+          <circle cx="24" cy="24" r="22" fill="white"/>
+          <circle cx="24" cy="24" r="20" fill="#567A90"/>
+          <text y="36" x="24" font-size="36" text-anchor="middle">🍕</text>
         </svg>`
       )}`,
-      scaledSize: new google.maps.Size(32, 32),
+      scaledSize: new google.maps.Size(48, 48),
     };
   }, [map]);
 
