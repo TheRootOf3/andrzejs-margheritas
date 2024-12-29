@@ -14,3 +14,9 @@ restaurants:
     score: 5
     notes: Fantastic Neapolitan pizza, really big portions!
     visited: '2024-12-29'
+  - name: SDF Trading Ltd trading as World-of-Satellite
+    address: Unit 5, Hoddesdon Industrial Centre, Pindar Rd, Hoddesdon EN11 0DD, UK
+    coordinates:
+      lat: 51.7667347
+      lng: 0.004915399999999999
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJPwZruQCe2EcRWU4strmMSYM
