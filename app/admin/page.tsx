@@ -3,6 +3,7 @@ import { authOptions } from "@/auth";
 import RestaurantForm from "@/components/RestaurantForm";
 import GoogleMapsProvider from "@/components/GoogleMapsProvider";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default async function AdminPage() {
   const session = await getServerSession(authOptions);
@@ -19,12 +20,12 @@ export default async function AdminPage() {
           <span className="text-sm">
             Logged in as: <span className="font-bold">{session.user?.name}</span>
           </span>
-          <a
+          <Link
             href="/api/auth/signout"
             className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md text-sm transition-colors"
           >
             Sign Out
-          </a>
+          </Link>
         </div>
       </div>
       <GoogleMapsProvider>
