@@ -1,6 +1,7 @@
 "use client";
 
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { useState } from "react";
+import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 import type { Restaurant } from "@/lib/loadRestaurants";
 
 const containerStyle = {
@@ -18,6 +19,8 @@ interface MapProps {
 }
 
 export default function Map({ restaurants }: MapProps) {
+  const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
+
   return (
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
       <GoogleMap
@@ -30,8 +33,33 @@ export default function Map({ restaurants }: MapProps) {
             key={restaurant.name}
             position={restaurant.coordinates}
             title={restaurant.name}
+            onClick={() => setSelectedRestaurant(restaurant)}
           />
         ))}
+
+        {selectedRestaurant && (
+          <InfoWindow
+            position={selectedRestaurant.coordinates}
+            onCloseClick={() => setSelectedRestaurant(null)}
+          >
+            <div className="p-2 max-w-xs">
+              <h2 className="font-bold text-lg">{selectedRestaurant.name}</h2>
+              <p className="text-sm mt-1">{selectedRestaurant.address}</p>
+              <p className="text-sm mt-1">Score: {selectedRestaurant.score}/10</p>
+              {selectedRestaurant.notes && (
+                <p className="text-sm mt-1 italic">{selectedRestaurant.notes}</p>
+              )}
+              <a
+                href={selectedRestaurant.maps_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-blue-600 hover:text-blue-800 mt-2 block"
+              >
+                View on Google Maps
+              </a>
+            </div>
+          </InfoWindow>
+        )}
       </GoogleMap>
     </LoadScript>
   );
