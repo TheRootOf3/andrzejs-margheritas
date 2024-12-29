@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        playfair: ["var(--font-playfair)"],
+        marker: ["var(--font-marker)"],
       },
     },
   },

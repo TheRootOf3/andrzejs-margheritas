@@ -6,7 +6,7 @@ export default function Home() {
   
   return (
     <main>
-      <h1 className="text-5xl font-bold text-center py-8 font-playfair italic text-white">Andrzej&apos;s Margheritas</h1>
+      <h1 className="text-5xl text-center py-8 font-marker text-white">Andrzej&apos;s Margheritas</h1>
       <Map restaurants={restaurants} />
     </main>
   );
