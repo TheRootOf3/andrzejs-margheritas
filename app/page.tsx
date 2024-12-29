@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="relative">
       <Navigation />
-      <div className="absolute left-1/2 -translate-x-1/2 top-8 z-10">
+      <div className="absolute left-1/2 -translate-x-1/2 top-16 z-10">
         <div
           className="flex flex-col items-center text-white rounded-lg"
           style={{
