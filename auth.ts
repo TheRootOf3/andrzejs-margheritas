@@ -10,9 +10,16 @@ const handler = NextAuth({
   ],
   callbacks: {
     async signIn({ user, account, profile }: any) {
-      return profile?.login === process.env.ALLOWED_GITHUB_USER
+      if (profile?.login === process.env.ALLOWED_GITHUB_USER) {
+        return true;
+      }
+      return '/auth/error?error=AccessDenied';
     },
   },
+  pages: {
+    error: '/auth/error',
+    signIn: '/auth/signin',
+  }
 })
 
 export const { auth } = handler
