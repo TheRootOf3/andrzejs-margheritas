@@ -44,15 +44,26 @@ export async function POST(request: Request) {
     
     // Write back to file
     const yamlStr = `restaurants:\n${data.restaurants
-      .map(r => `  - name: "${r.name}"
+      .map(r => {
+        let yaml = `  - name: "${r.name}"
     address: "${r.address}"
     coordinates:
       lat: ${r.coordinates.lat}
       lng: ${r.coordinates.lng}
-    maps_url: "${r.maps_url}"
-    score: ${r.score}
-    notes: "${r.notes}"
-    visited: "${r.visited}"`)
+    maps_url: "${r.maps_url}"`;
+        
+        if (r.score !== undefined) {
+          yaml += `\n    score: ${r.score}`;
+        }
+        if (r.notes) {
+          yaml += `\n    notes: "${r.notes}"`;
+        }
+        if (r.visited) {
+          yaml += `\n    visited: "${r.visited}"`;
+        }
+        
+        return yaml;
+      })
       .join("\n\n")}`;
 
     writeFileSync(filePath, yamlStr);
