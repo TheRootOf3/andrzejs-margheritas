@@ -1,0 +1,10 @@
+restaurants:
+  - name: "Example Pizza Place"
+    address: "123 Pizza Street"
+    coordinates:
+      lat: 52.229676
+      lng: 21.012229
+    maps_url: "https://goo.gl/maps/example"
+    group: "Local"
+    score: 8.5
+    notes: "Great classic pizza"
