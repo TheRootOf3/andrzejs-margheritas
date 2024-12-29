@@ -1,10 +1,16 @@
 restaurants:
-  - name: "Rudy's Pizza Napoletana - Tottenham Court Road"
-    address: "53-54 Tottenham Ct Rd, London W1T 2EQ, UK"
+  - name: Franco Manca Covent Garden
+    address: 39 Maiden Ln, London WC2E 7LJ, UK
+    coordinates:
+      lat: 51.5109322
+      lng: -0.1228313
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJl5he88sEdkgRShzZK2n7_yY
+  - name: Rudy's Pizza Napoletana - Tottenham Court Road
+    address: 53-54 Tottenham Ct Rd, London W1T 2EQ, UK
     coordinates:
       lat: 51.5194924
       lng: -0.1334601
-    maps_url: "https://www.google.com/maps/place/?q=place_id:ChIJMUvCdfsbdkgR8VpHxXjosEg"
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJMUvCdfsbdkgR8VpHxXjosEg
     score: 5
-    notes: "Fantastic Neapolitan pizza, really big portions!"
-    visited: "2024-12-29"
+    notes: Fantastic Neapolitan pizza, really big portions!
+    visited: '2024-12-29'
