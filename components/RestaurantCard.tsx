@@ -30,11 +30,9 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
             </>
           )}
         </div>
-        {restaurant.visited && (
-          <p className="text-sm text-white font-medium text-center">
-            📅 Visited: {restaurant.visited}
-          </p>
-        )}
+        <p className="text-sm text-white font-medium text-center">
+          📅 {restaurant.visited ? `Visited: ${restaurant.visited}` : "Long, long time ago!"}
+        </p>
         <div className="flex justify-end mt-2">
           <a
             href={restaurant.maps_url}
