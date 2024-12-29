@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="relative">
       <div className="absolute left-1/2 -translate-x-1/2 top-8 z-10">
-        <h1 className="text-5xl px-12 py-8 font-marker text-white bg-black/50 backdrop-blur-sm rounded-lg">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-6 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-6 md:py-8 font-marker text-white bg-black/50 backdrop-blur-sm rounded-lg whitespace-nowrap">
           Andrzej&apos;s Margheritas
         </h1>
       </div>
