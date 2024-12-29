@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import FormMap from "./FormMap";
 import { useRouter } from "next/navigation";
 
 interface PlaceResult {
@@ -21,6 +22,7 @@ export default function RestaurantForm() {
   const [searchQuery, setSearchQuery] = useState("");
   const [predictions, setPredictions] = useState<Array<{place_id: string, description: string}>>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState<{lat: number, lng: number} | null>(null);
 
   const handleSearchInput = async (value: string) => {
     setSearchQuery(value);
@@ -69,6 +71,8 @@ export default function RestaurantForm() {
 
       const place = data.results[0];
       console.log('Selected place details:', place);
+      
+      setSelectedLocation(place.geometry.location);
       
       // Fill in the form fields
       const form = document.querySelector('form') as HTMLFormElement;
@@ -128,7 +132,8 @@ export default function RestaurantForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="max-w-2xl space-y-4 relative">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <form onSubmit={onSubmit} className="space-y-4 relative">
       <div className="space-y-4 mb-8">
         <div>
           <label htmlFor="search" className="block text-sm font-medium mb-1">
@@ -292,6 +297,13 @@ export default function RestaurantForm() {
       >
         Add Restaurant
       </button>
-    </form>
+      </form>
+      
+      {selectedLocation && (
+        <div className="sticky top-4">
+          <FormMap center={selectedLocation} />
+        </div>
+      )}
+    </div>
   );
 }
