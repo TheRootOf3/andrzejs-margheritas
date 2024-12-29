@@ -2,6 +2,11 @@
 
 import { Restaurant } from "@/lib/loadRestaurants";
 import { useState } from "react";
+
+const defaultCenter = {
+  lat: 51.515,
+  lng: -0.135,
+};
 import { useMapContext } from "@/contexts/MapContext";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
@@ -43,13 +48,19 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
             backdropFilter: "blur(4px)",
           }}
         >
-          <ul className="space-y-2">
+          <div className="space-y-4">
+            <button
+              onClick={() => setMapFocus(defaultCenter)}
+              className="w-full bg-white/10 hover:bg-white/20 rounded-lg py-2 px-4 text-sm font-marker transition-colors"
+            >
+              Show All Restaurants
+            </button>
+            <ul className="space-y-2">
             {restaurants.map((restaurant, index) => (
               <li
                 key={index}
                 className="text-white"
-                onMouseEnter={() => setMapFocus(restaurant.coordinates)}
-                onMouseLeave={() => setMapFocus(defaultCenter)}
+                onClick={() => setMapFocus(restaurant.coordinates)}
               >
                 <a
                   href={restaurant.maps_url}
@@ -62,7 +73,8 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
                 </a>
               </li>
             ))}
-          </ul>
+            </ul>
+          </div>
         </div>
       )}
     </div>
