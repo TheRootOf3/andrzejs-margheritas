@@ -1,4 +1,13 @@
 restaurants:
+  - name: DFDFDF
+    address: 60 Rue Colonel Teyssier, 57230 Bitche, France
+    coordinates:
+      lat: 49.0523795
+      lng: 7.426077499999999
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJsymqigwrlEcRWNBUtphQkXg
+    score: 3
+    notes: dfdfs
+    visited: '2024-12-03'
   - name: Franco Manca Covent Garden
     address: 39 Maiden Ln, London WC2E 7LJ, UK
     coordinates:
