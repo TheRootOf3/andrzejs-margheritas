@@ -1,4 +1,11 @@
 restaurants:
+  - name: Aromi Caffe and Pizzeria
+    address: 1 Bene't St, Cambridge CB2 3QN, UK
+    coordinates:
+      lat: 52.2042107
+      lng: 0.1188401
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJDfksD71w2EcRTI7wFCqhbHk
+    score: 4
   - name: Ave Mario
     address: 15 Henrietta St, London WC2E 8QG, UK
     coordinates:
@@ -16,6 +23,13 @@ restaurants:
     score: 3
     notes: Neither fast-food, nor proper Neapolitan pizza. Dull knives.
     visited: '2024-12-28'
+  - name: Boscaiola Restaurant
+    address: Szewska 10, 31-009 Kraków, Poland
+    coordinates:
+      lat: 50.06249589999999
+      lng: 19.9347704
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJdZ6mhQ5bFkcRUUGFNgZdKKA
+    score: 3
   - name: Bürger's Moosach München
     address: Bunzlauer Str. 25, 80992 München, Germany
     coordinates:
@@ -39,6 +53,20 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJiQRo3jAbdkgRtEwh9iGpvM8
     score: 4
     notes: Good Franco Manca spot, used to go there a lot!
+  - name: Franco Manca St Paul's
+    address: 2 St. Paul's Churchyard, City of London, London EC4M 8AP, UK
+    coordinates:
+      lat: 51.51358949999999
+      lng: -0.1003824
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJx29Kt3wFdkgR2Ab44FZkHVk
+    score: 3
+  - name: Franco Manca Tottenham Court Road
+    address: 104 Tottenham Ct Rd, London W1T 4EW, UK
+    coordinates:
+      lat: 51.5227248
+      lng: -0.1366918
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJ9yWAIykbdkgRRn-FZQ6ciwQ
+    score: 3
   - name: Garden Pizza & Salad Bar
     address: Vase Stajića 27, Novi Sad 21000, Serbia
     coordinates:
@@ -75,6 +103,14 @@ restaurants:
     notes: >-
       Not bad but I was desperate and probably could eat anything at that point
       lol
+  - name: Nolio Restaurant
+    address: Krakowska 27, 31-062 Kraków, Poland
+    coordinates:
+      lat: 50.04925830000001
+      lng: 19.9429444
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJPaWfjWlbFkcRDICApi0cF9M
+    score: 4
+    notes: Good neapolitan pizza!
   - name: Nonna Selena Pizzeria
     address: 18 Woburn Pl, London WC1H 0LN, UK
     coordinates:
@@ -108,6 +144,13 @@ restaurants:
       lng: -1.2569571
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJN1J1-drHdkgRiEWJLmezT-A
     score: 4
+  - name: Pizza Express
+    address: Benbow House, 24 New Globe Walk, London SE1 9DS, UK
+    coordinates:
+      lat: 51.5081905
+      lng: -0.09583699999999999
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJ3RW2oqkEdkgRFX7fAZCcpDc
+    score: 3
   - name: Pizza Hut Szczecin Derdowskiego
     address: 26 Kwietnia 2, 71-126 Szczecin, Poland
     coordinates:
@@ -131,6 +174,14 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJkbJLhA5bFkcR9dxapj9grYA
     score: 4
     notes: 'Interesting concept, where you can compose your own pizza from scratch! '
+  - name: Pizza1889
+    address: Leisure Park, Clifton Rd, Cambridge CB1 7DY, UK
+    coordinates:
+      lat: 52.1899276
+      lng: 0.1364302
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJj6pInC572EcRM3LRriHb2_I
+    score: 3
+    notes: Small but cosy
   - name: Pizzeria Peperoni Szczecin Południowa
     address: Południowa 1A, 71-001 Szczecin, Poland
     coordinates:
@@ -155,6 +206,14 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJ6xvs94VZwokRnT1D2lX2OTw
     score: 3
     notes: NYC classic, small but busy!
+  - name: Restauracja Olio | Pizza Napoletana
+    address: Nadwiślańska 7, 30-527 Kraków, Poland
+    coordinates:
+      lat: 50.0466517
+      lng: 19.9502356
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJC8d5XvtbFkcRAAPrZU3lxbY
+    score: 4
+    notes: Nice pizza, nice interiors!
   - name: Rudy's Pizza Napoletana - Tottenham Court Road
     address: 53-54 Tottenham Ct Rd, London W1T 2EQ, UK
     coordinates:
@@ -163,3 +222,11 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJMUvCdfsbdkgR8VpHxXjosEg
     score: 5
     notes: Fantastic Neapolitan pizza, really big portions!
+  - name: Zizzi - Coventry
+    address: Cathedral Lanes Shopping Centre, Broadgate, Coventry CV1 1LL, UK
+    coordinates:
+      lat: 52.4081916
+      lng: -1.51011
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJT1jV_M9Ld0gRTBy71085UWU
+    score: 2
+    notes: meh
