@@ -42,7 +42,7 @@ export default function Map({ restaurants }: MapProps) {
             position={selectedRestaurant.coordinates}
             onCloseClick={() => setSelectedRestaurant(null)}
           >
-            <div className="p-2 max-w-xs">
+            <div className="p-2 max-w-xs text-black">
               <h2 className="font-bold text-lg">{selectedRestaurant.name}</h2>
               <p className="text-sm mt-1">{selectedRestaurant.address}</p>
               <p className="text-sm mt-1">Score: {selectedRestaurant.score}/10</p>
