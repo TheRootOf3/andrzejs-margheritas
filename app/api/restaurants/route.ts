@@ -64,6 +64,11 @@ export async function POST(request: Request) {
       ref: 'main'
     });
 
+    // Type guard for single file response
+    if (!('content' in fileData)) {
+      throw new Error('Unexpected API response format');
+    }
+
     // Decode current content
     const currentContent = Buffer.from(fileData.content, 'base64').toString();
     const data = load(currentContent) as { restaurants: Restaurant[] };
