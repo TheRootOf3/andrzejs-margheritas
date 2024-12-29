@@ -123,6 +123,14 @@ restaurants:
       lng: -0.1250952
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJXTc7dDobdkgRx_lkJhd-j_I
     score: 3
+  - name: Pizzatopia | Szewska
+    address: Szewska 22, 31-009 Kraków, Poland
+    coordinates:
+      lat: 50.0628924
+      lng: 19.9338609
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJkbJLhA5bFkcR9dxapj9grYA
+    score: 4
+    notes: 'Interesting concept, where you can compose your own pizza from scratch! '
   - name: Pizzeria Peperoni Szczecin Południowa
     address: Południowa 1A, 71-001 Szczecin, Poland
     coordinates:
