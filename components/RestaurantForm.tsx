@@ -19,24 +19,41 @@ export default function RestaurantForm() {
   const router = useRouter();
   const [error, setError] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<PlaceResult[]>([]);
-  const [isSearching, setIsSearching] = useState(false);
-  
-  const handleSearch = async () => {
-    if (!searchQuery.trim()) return;
-    
-    setIsSearching(true);
+  const [predictions, setPredictions] = useState<Array<{place_id: string, description: string}>>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSearchInput = async (value: string) => {
+    setSearchQuery(value);
+    if (!value.trim()) {
+      setPredictions([]);
+      return;
+    }
+
+    setIsLoading(true);
     try {
-      const response = await fetch(`/api/places/search?query=${encodeURIComponent(searchQuery)}`);
+      const response = await fetch(`/api/places/autocomplete?input=${encodeURIComponent(value)}`);
       const data = await response.json();
       
-      if (data.results) {
-        setSearchResults(data.results);
+      if (data.predictions) {
+        setPredictions(data.predictions);
       }
     } catch (err) {
-      setError("Failed to search for places");
+      setError("Failed to fetch suggestions");
     } finally {
-      setIsSearching(false);
+      setIsLoading(false);
+    }
+  };
+
+  const handlePlaceDetails = async (placeId: string) => {
+    try {
+      const response = await fetch(`/api/places/search?query=place_id:${placeId}`);
+      const data = await response.json();
+      
+      if (data.results?.[0]) {
+        handlePlaceSelect(data.results[0]);
+      }
+    } catch (err) {
+      setError("Failed to fetch place details");
     }
   };
 
@@ -104,32 +121,32 @@ export default function RestaurantForm() {
               type="text"
               id="search"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => handleSearchInput(e.target.value)}
               className="flex-1 p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
-              placeholder="Search for a restaurant..."
+              placeholder="Start typing to search for a restaurant..."
             />
-            <button
-              type="button"
-              onClick={handleSearch}
-              disabled={isSearching}
-              className="bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg transition-colors font-marker disabled:opacity-50"
-            >
-              {isSearching ? "Searching..." : "Search"}
-            </button>
+            {isLoading && (
+              <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+              </div>
+            )}
           </div>
         </div>
 
-        {searchResults.length > 0 && (
+        {predictions.length > 0 && (
           <div className="absolute z-10 w-full bg-black/90 backdrop-blur-sm rounded-lg border border-white/20 max-h-60 overflow-y-auto">
-            {searchResults.map((place) => (
+            {predictions.map((prediction) => (
               <button
-                key={place.place_id}
+                key={prediction.place_id}
                 type="button"
-                onClick={() => handlePlaceSelect(place)}
+                onClick={() => {
+                  handlePlaceDetails(prediction.place_id);
+                  setPredictions([]);
+                  setSearchQuery("");
+                }}
                 className="w-full text-left px-4 py-2 hover:bg-white/10 transition-colors text-white"
               >
-                <div className="font-medium">{place.name}</div>
-                <div className="text-sm text-white/70">{place.formatted_address}</div>
+                <div className="text-sm">{prediction.description}</div>
               </button>
             ))}
           </div>
