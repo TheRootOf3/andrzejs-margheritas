@@ -15,7 +15,7 @@ body {
 
 /* Style the InfoWindow to match header styling */
 .gm-style .gm-style-iw-c {
-  background: rgba(0, 0, 0, 0.5) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
   backdrop-filter: blur(4px) !important;
   border: none !important;
   padding: 0 !important;
@@ -26,7 +26,7 @@ body {
 
 /* Style the InfoWindow tail/arrow */
 .gm-style .gm-style-iw-t::after {
-  background: rgba(0, 0, 0, 0.5) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
   backdrop-filter: blur(4px) !important;
   box-shadow: none !important;
 }

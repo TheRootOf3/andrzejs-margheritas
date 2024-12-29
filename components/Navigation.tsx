@@ -11,14 +11,14 @@ export default function Navigation() {
       {status === "authenticated" ? (
         <Link
           href="/admin"
-          className="bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg transition-colors font-marker"
+          className="bg-black/60 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg transition-colors font-marker"
         >
           Add Restaurant
         </Link>
       ) : (
         <button
           onClick={() => signIn("github")}
-          className="bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg transition-colors font-marker"
+          className="bg-black/60 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg transition-colors font-marker"
         >
           Sign In
         </button>
