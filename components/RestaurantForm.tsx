@@ -114,7 +114,18 @@ export default function RestaurantForm() {
     setIsSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
-    const data: any = {
+    const data: {
+      name: string | null;
+      address: string | null;
+      coordinates: {
+        lat: number;
+        lng: number;
+      };
+      maps_url: string | null;
+      score?: number;
+      notes?: string;
+      visited?: string;
+    } = {
       name: formData.get("name"),
       address: formData.get("address"),
       coordinates: {
