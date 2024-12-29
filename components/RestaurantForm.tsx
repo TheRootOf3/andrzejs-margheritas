@@ -203,6 +203,8 @@ export default function RestaurantForm() {
                 value={searchQuery}
                 onChange={(e) => handleSearchInput(e.target.value)}
                 className="flex-1 p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
+                autoComplete="off"
+                spellCheck="false"
                 placeholder="Start typing to search for a restaurant..."
               />
               {isLoading && (
@@ -247,6 +249,8 @@ export default function RestaurantForm() {
             id="name"
             name="name"
             className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
+            autoComplete="off"
+            spellCheck="false"
           />
         </div>
 

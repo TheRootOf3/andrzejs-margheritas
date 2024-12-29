@@ -139,19 +139,19 @@ ${newRestaurant.visited ? `- Visited: ${newRestaurant.visited}` : ''}`,
 }
 
 function isValidRestaurant(data: any): data is Restaurant {
+  const isValidUnicodeString = (str: any) => 
+    typeof str === "string" && str.trim() !== "";
+
   return (
-    typeof data.name === "string" &&
-    data.name.trim() !== "" &&
-    typeof data.address === "string" &&
-    data.address.trim() !== "" &&
+    isValidUnicodeString(data.name) &&
+    isValidUnicodeString(data.address) &&
     typeof data.coordinates?.lat === "number" &&
     !isNaN(data.coordinates.lat) &&
     typeof data.coordinates?.lng === "number" &&
     !isNaN(data.coordinates.lng) &&
-    typeof data.maps_url === "string" &&
-    data.maps_url.trim() !== "" &&
+    isValidUnicodeString(data.maps_url) &&
     (data.score === undefined || data.score === null || (typeof data.score === "number" && data.score >= 0 && data.score <= 5)) &&
-    (data.notes === undefined || data.notes === null || typeof data.notes === "string") &&
+    (data.notes === undefined || data.notes === null || isValidUnicodeString(data.notes)) &&
     (data.visited === undefined || data.visited === null || data.visited === "" || (typeof data.visited === "string" && /^\d{4}-\d{2}-\d{2}$/.test(data.visited)))
   );
 }
