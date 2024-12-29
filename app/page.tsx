@@ -1,9 +1,12 @@
 import Map from "@/components/Map";
+import { loadRestaurants } from "@/lib/loadRestaurants";
 
 export default function Home() {
+  const restaurants = loadRestaurants();
+  
   return (
     <main>
-      <Map />
+      <Map restaurants={restaurants} />
     </main>
   );
 }
