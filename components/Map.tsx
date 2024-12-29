@@ -34,37 +34,46 @@ export default function Map({ restaurants }: MapProps) {
     setMap(map);
   }, []);
 
-  const getMarkerIcon = useCallback((restaurant: Restaurant) => {
-    if (!map) return null;
+  const getMarkerIcon = useCallback(
+    (restaurant: Restaurant) => {
+      if (!map) return null;
 
-    const isPerfectScore = restaurant.score === 5;
-    const svgSize = isPerfectScore ? 80 : 52;
-    const centerPoint = svgSize / 2;
+      const isPerfectScore = restaurant.score === 5;
+      const svgSize = isPerfectScore ? 80 : 52;
+      const centerPoint = svgSize / 2;
 
-    let additionalPizzas = '';
-    if (isPerfectScore) {
-      // Add 5 small pizzas in a circle around the main one
-      const radius = 28;
-      for (let i = 0; i < 5; i++) {
-        const angle = (i * 2 * Math.PI) / 5;
-        const x = centerPoint + radius * Math.cos(angle);
-        const y = centerPoint + radius * Math.sin(angle);
-        additionalPizzas += `<text y="${y + 4}" x="${x}" font-size="16" text-anchor="middle">🍕</text>`;
+      let additionalPizzas = "";
+      if (isPerfectScore) {
+        // Add 5 small pizzas in a circle around the main one
+        const radius = 28;
+        for (let i = 0; i < 5; i++) {
+          const angle = (i * 2 * Math.PI) / 5;
+          const x = centerPoint + radius * Math.cos(angle);
+          const y = centerPoint + radius * Math.sin(angle);
+          additionalPizzas += `<text y="${
+            y + 4
+          }" x="${x}" font-size="16" text-anchor="middle">🍕</text>`;
+        }
       }
-    }
 
-    return {
-      url: `data:image/svg+xml,${encodeURIComponent(
-        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${svgSize} ${svgSize}" width="${svgSize}" height="${svgSize}">
+      return {
+        url: `data:image/svg+xml,${encodeURIComponent(
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${svgSize} ${svgSize}" width="${svgSize}" height="${svgSize}">
           <circle cx="${centerPoint}" cy="${centerPoint}" r="${centerPoint}" fill="rgba(0, 0, 0, 0.5)"/>
-          <circle cx="${centerPoint}" cy="${centerPoint}" r="${centerPoint - 4}" stroke="white" stroke-width="2" fill="rgba(0, 0, 0, 0.5)"/>
-          <text y="${centerPoint + 10}" x="${centerPoint}" font-size="32" text-anchor="middle">🍕</text>
+          <circle cx="${centerPoint}" cy="${centerPoint}" r="${
+            centerPoint - 4
+          }" stroke="white" stroke-width="2" fill="rgba(0, 0, 0, 0.5)"/>
+          <text y="${
+            centerPoint + 10
+          }" x="${centerPoint}" font-size="32" text-anchor="middle">🍕</text>
           ${additionalPizzas}
         </svg>`
-      )}`,
-      scaledSize: new google.maps.Size(svgSize, svgSize),
-    };
-  }, [map]);
+        )}`,
+        scaledSize: new google.maps.Size(svgSize, svgSize),
+      };
+    },
+    [map]
+  );
 
   return (
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
