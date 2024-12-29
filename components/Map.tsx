@@ -56,6 +56,9 @@ export default function Map({ restaurants }: MapProps) {
         center={center}
         zoom={13}
         onLoad={onLoad}
+        options={{
+          streetViewControl: false
+        }}
       >
         {map &&
           restaurants.map((restaurant) => (
