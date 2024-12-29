@@ -71,9 +71,7 @@ function isValidRestaurant(data: any): data is Restaurant {
     typeof data.coordinates?.lat === "number" &&
     typeof data.coordinates?.lng === "number" &&
     typeof data.maps_url === "string" &&
-    typeof data.score === "number" &&
-    data.score >= 0 &&
-    data.score <= 5 &&
+    (data.score === undefined || (typeof data.score === "number" && data.score >= 0 && data.score <= 5)) &&
     (data.notes === undefined || typeof data.notes === "string") &&
     (data.visited === undefined || (typeof data.visited === "string" && /^\d{4}-\d{2}-\d{2}$/.test(data.visited)))
   );

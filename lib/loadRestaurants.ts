@@ -10,7 +10,7 @@ export interface Restaurant {
     lng: number;
   };
   maps_url: string;
-  score: number;
+  score?: number;
   notes?: string;
   visited?: string; // ISO date string format (YYYY-MM-DD)
 }

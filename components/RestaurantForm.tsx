@@ -233,7 +233,6 @@ export default function RestaurantForm() {
             min="0"
             max="5"
             step="0.1"
-            required
             className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
           />
         </div>

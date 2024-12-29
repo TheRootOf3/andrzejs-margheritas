@@ -17,12 +17,16 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
           </p>
         </div>
         <div className="space-y-1 text-center">
-          <p className="text-sm text-white font-medium">
-            Score: {restaurant.score}/5
-          </p>
-          <p className="text-sm text-white font-medium">
-            {Array(restaurant.score).fill("🍕").join("")}
-          </p>
+          {restaurant.score !== undefined && (
+            <>
+              <p className="text-sm text-white font-medium">
+                Score: {restaurant.score}/5
+              </p>
+              <p className="text-sm text-white font-medium">
+                {Array(restaurant.score).fill("🍕").join("")}
+              </p>
+            </>
+          )}
         </div>
         {restaurant.visited && (
           <p className="text-sm text-white font-medium text-center">
