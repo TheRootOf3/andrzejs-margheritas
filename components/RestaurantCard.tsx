@@ -6,7 +6,7 @@ interface RestaurantCardProps {
 
 export function RestaurantCard({ restaurant }: RestaurantCardProps) {
   return (
-    <div className="py-2 px-4 rounded-lg hover:shadow-lg">
+    <div className="py-2 px-4 rounded-lg hover:shadow-lg animate-card-popup">
       <h2 className="text-xl font-semibold text-white text-center">
         {restaurant.name}
       </h2>
