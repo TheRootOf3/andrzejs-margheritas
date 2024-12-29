@@ -1,77 +1,11 @@
 restaurants:
-  - name: "50 Kalò di Ciro Salvo"
-    address: "7 Northumberland Ave, London WC2N 5BY"
+  - name: "Rudy's Pizza Napoletana - Tottenham Court Road"
+    address: "53-54 Tottenham Ct Rd, London W1T 2EQ, UK"
     coordinates:
-      lat: 51.507222
-      lng: -0.124722
-    maps_url: "https://goo.gl/maps/YqQZB9RZepE8QLWP6"
-    group: "Neapolitan"
-    score: 9
-    notes: "Authentic Neapolitan pizza, amazing dough"
-    visited: "2024-01-01"
-
-  - name: "Franco Manca Soho"
-    address: "51 Berwick St, London W1F 8SJ"
-    coordinates:
-      lat: 51.514444
-      lng: -0.135833
-    maps_url: "https://goo.gl/maps/QZ2Z2Z2Z2Z2Z2Z2Z2"
-    group: "Sourdough"
-    score: 8.5
-    notes: "Great sourdough pizza at reasonable prices"
-    visited: "2024-01-02"
-
-  - name: "L'Antica Pizzeria da Michele"
-    address: "199 Baker St, London NW1 6UY"
-    coordinates:
-      lat: 51.523611
-      lng: -0.158333
-    maps_url: "https://goo.gl/maps/8YQ8YZ5Z8Z2Q8Z2Q8"
-    group: "Neapolitan"
-    score: 8.8
-    notes: "Famous Naples pizzeria's London branch"
-    visited: "2024-01-03"
-
-  - name: "Pizza Express Live Holborn"
-    address: "99 High Holborn, London WC1V 6LF, UK"
-    coordinates:
-      lat: 51.51791
-      lng: -0.1187016
-    maps_url: "https://www.google.com/maps/place/?q=place_id:ChIJeyhymTUbdkgRuFUqBPIA1Ys"
-    group: "df"
-    score: 3
-    notes: "df"
-    visited: "2024-01-04"
-
-  - name: "Pizza Pilgrims"
-    address: "11 Dean St, London W1D 3RP"
-    coordinates:
-      lat: 51.515278
-      lng: -0.133889
-    maps_url: "https://goo.gl/maps/3Z3Z3Z3Z3Z3Z3Z3Z3"
-    group: "Neapolitan"
-    score: 8.7
-    notes: "Started as a food truck, now a London institution"
-    visited: "2024-01-05"
-
-  - name: "Santa Maria"
-    address: "15 St Mary's Rd, London W5 5RA"
-    coordinates:
-      lat: 51.509895
-      lng: -0.317456
-    maps_url: "https://goo.gl/maps/VL9ZQxQyPxvzr5Yu6"
-    group: "Neapolitan"
-    score: 9.2
-    notes: "One of London's best Neapolitan pizzas"
-    visited: "2024-01-06"
-
-  - name: "Test pizza"
-    address: "sdfsdfsdf"
-    coordinates:
-      lat: 51
-      lng: 0
-    maps_url: "http://google.com"
-    group: "34"
-    score: 9
-    notes: "df"
-    visited: "2024-01-07"
+      lat: 51.5194924
+      lng: -0.1334601
+    maps_url: "https://www.google.com/maps/place/?q=place_id:ChIJMUvCdfsbdkgR8VpHxXjosEg"
+    group: "-"
+    score: 10
+    notes: "Fantastic Neapolitan pizza, really big portions!"
+    visited: "2024-12-29"
