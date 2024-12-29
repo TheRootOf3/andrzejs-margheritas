@@ -1,5 +1,6 @@
 import Map from "@/components/Map";
 import Navigation from "@/components/Navigation";
+import RestaurantList from "@/components/RestaurantList";
 import { loadRestaurants } from "@/lib/loadRestaurants";
 
 export default function Home() {
@@ -25,19 +26,7 @@ export default function Home() {
         </div>
       </div>
       <Map restaurants={restaurants} />
-      <div className="fixed bottom-4 left-4 z-10">
-        <div
-          className="text-white rounded-lg px-4 py-2"
-          style={{
-            background: "rgba(0, 0, 0, 0.6)",
-            backdropFilter: "blur(4px)",
-          }}
-        >
-          <p className="text-sm sm:text-base font-marker">
-            {restaurants.length} places discovered
-          </p>
-        </div>
-      </div>
+      <RestaurantList restaurants={restaurants} />
     </main>
   );
 }
