@@ -11,7 +11,7 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-4 left-4 z-10 w-[calc(100%-2rem)] sm:w-auto min-w-[280px] max-w-[90vw]">
+    <div className="fixed bottom-4 left-4 z-10 min-w-[280px] max-w-[90vw]">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="text-white rounded-lg px-4 py-3 w-full text-left touch-manipulation"
