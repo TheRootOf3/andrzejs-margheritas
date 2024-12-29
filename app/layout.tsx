@@ -19,8 +19,8 @@ const marker = Permanent_Marker({
 });
 
 export const metadata: Metadata = {
-  title: "Pizza Restaurants Map",
-  description: "Find the best pizza restaurants in town",
+  title: "Andrzej's Margheritas",
+  description: "Find the best Andrzej-approved pizza places in town!",
 };
 
 export default function RootLayout({
