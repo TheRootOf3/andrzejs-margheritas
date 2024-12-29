@@ -67,7 +67,7 @@ export default function RestaurantForm() {
       (form.elements.namedItem('maps_url') as HTMLInputElement).value = 
         `https://www.google.com/maps/place/?q=place_id:${place.place_id}`;
     }
-    setSearchResults([]);
+    setPredictions([]);
     setSearchQuery("");
   };
 
