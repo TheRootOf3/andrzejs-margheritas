@@ -25,4 +25,4 @@ const config = {
 const handler = NextAuth(config)
 
 export const { auth } = handler
-export { GET, POST } = handler
+export const { GET, POST } = handler
