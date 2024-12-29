@@ -22,6 +22,9 @@ export default function Home() {
           <p className="text-sm sm:text-base md:text-lg lg:text-xl px-4 pb-3 sm:pb-4 md:pb-6 font-marker whitespace-nowrap">
             Yeah, I really do like them.
           </p>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl px-4 pb-3 sm:pb-4 md:pb-6 font-marker">
+            {restaurants.length} places discovered
+          </p>
         </div>
       </div>
       <Map restaurants={restaurants} />
