@@ -11,7 +11,7 @@ export async function GET(request: Request) {
   try {
     const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${encodeURIComponent(
       input
-    )}&types=establishment&strictbounds=false&key=${process.env.GOOGLE_PLACES_API_KEY}`;
+    )}&types=establishment&location=51.5074,0.1278&radius=50000&key=${process.env.GOOGLE_PLACES_API_KEY}`;
     
     console.log('Fetching from URL:', url);
     
