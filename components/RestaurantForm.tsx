@@ -59,26 +59,33 @@ export default function RestaurantForm() {
       
       console.log('Place details response:', data);
       
-      if (data.results?.[0]) {
-        const place = data.results[0];
-        console.log('Selected place:', place);
-        
-        // Fill in the form fields
-        const form = document.querySelector('form') as HTMLFormElement;
-        if (form) {
-          (form.elements.namedItem('name') as HTMLInputElement).value = place.name;
-          (form.elements.namedItem('address') as HTMLInputElement).value = place.formatted_address;
-          (form.elements.namedItem('lat') as HTMLInputElement).value = place.geometry.location.lat.toString();
-          (form.elements.namedItem('lng') as HTMLInputElement).value = place.geometry.location.lng.toString();
-          (form.elements.namedItem('maps_url') as HTMLInputElement).value = 
-            `https://www.google.com/maps/place/?q=place_id:${placeId}`;
-        }
-        setPredictions([]);
-        setSearchQuery("");
-      } else {
-        console.error('No results found in place details response');
-        setError("No details found for this place");
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch place details');
       }
+      
+      const data = await response.json();
+      console.log('Place details full response:', data);
+
+      if (!data.results?.length) {
+        throw new Error('No results found for this place');
+      }
+
+      const place = data.results[0];
+      console.log('Selected place details:', place);
+      
+      // Fill in the form fields
+      const form = document.querySelector('form') as HTMLFormElement;
+      if (form) {
+        (form.elements.namedItem('name') as HTMLInputElement).value = place.name;
+        (form.elements.namedItem('address') as HTMLInputElement).value = place.formatted_address;
+        (form.elements.namedItem('lat') as HTMLInputElement).value = place.geometry.location.lat.toString();
+        (form.elements.namedItem('lng') as HTMLInputElement).value = place.geometry.location.lng.toString();
+        (form.elements.namedItem('maps_url') as HTMLInputElement).value = 
+          `https://www.google.com/maps/place/?q=place_id:${placeId}`;
+      }
+      setPredictions([]);
+      setSearchQuery("");
     } catch (err) {
       console.error('Error fetching place details:', err);
       setError("Failed to fetch place details");
