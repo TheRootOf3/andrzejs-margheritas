@@ -3,7 +3,10 @@ import { Restaurant } from '@/lib/loadRestaurants';
 
 const ClientMap = dynamic(
   () => import('./ClientMap').then((mod) => mod.ClientMap),
-  { loading: () => <div>Loading map...</div>, ssr: false }
+  { 
+    loading: () => <div className="w-full h-[600px] flex items-center justify-center bg-gray-100 rounded-lg">Loading map...</div>,
+    ssr: false 
+  }
 );
 
 interface MapProps {
