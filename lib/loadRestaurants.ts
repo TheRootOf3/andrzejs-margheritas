@@ -21,7 +21,13 @@ interface RestaurantsData {
 
 export function loadRestaurants(): Restaurant[] {
   const filePath = join(process.cwd(), 'data', 'restaurants.yaml');
-  const fileContents = readFileSync(filePath, 'utf8');
-  const data = load(fileContents) as RestaurantsData;
-  return data.restaurants;
+  
+  try {
+    const fileContents = readFileSync(filePath, 'utf8');
+    const data = load(fileContents) as RestaurantsData;
+    return data.restaurants || [];
+  } catch (error) {
+    // If file doesn't exist or is empty, return empty array
+    return [];
+  }
 }
