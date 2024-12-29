@@ -27,21 +27,25 @@ export default function Map({ restaurants }: MapProps) {
   const [selectedRestaurant, setSelectedRestaurant] =
     useState<Restaurant | null>(null);
 
-  const getMarkerIcon = useCallback(
-    () => ({
-      url: `data:image/svg+xml,${encodeURIComponent(
-        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-        <circle cx="16" cy="16" r="16" fill="#F5DEB3"/>
-        <text y="24" x="16" font-size="24" text-anchor="middle">🍕</text>
-      </svg>`
-      )}`,
-      scaledSize: new google.maps.Size(32, 32),
-    }),
-    []
-  );
-
   return (
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
+      {({ isLoaded }) => {
+        if (!isLoaded) return null;
+
+        const getMarkerIcon = useCallback(
+          () => ({
+            url: `data:image/svg+xml,${encodeURIComponent(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+              <circle cx="16" cy="16" r="16" fill="#F5DEB3"/>
+              <text y="24" x="16" font-size="24" text-anchor="middle">🍕</text>
+            </svg>`
+            )}`,
+            scaledSize: new google.maps.Size(32, 32),
+          }),
+          [isLoaded]
+        );
+
+        return (
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
         {restaurants.map((restaurant) => (
           <Marker
@@ -80,7 +84,9 @@ export default function Map({ restaurants }: MapProps) {
             </div>
           </InfoWindow>
         )}
-      </GoogleMap>
+        </GoogleMap>
+        );
+      }}
     </LoadScript>
   );
 }
