@@ -111,7 +111,7 @@ export default function RestaurantForm() {
     setError("");
 
     const formData = new FormData(event.currentTarget);
-    const data = {
+    const data: any = {
       name: formData.get("name"),
       address: formData.get("address"),
       coordinates: {
@@ -119,10 +119,22 @@ export default function RestaurantForm() {
         lng: parseFloat(formData.get("lng") as string),
       },
       maps_url: formData.get("maps_url"),
-      score: parseFloat(formData.get("score") as string),
-      notes: formData.get("notes"),
-      visited: formData.get("visited") as string,
     };
+
+    const score = formData.get("score");
+    if (score) {
+      data.score = parseFloat(score as string);
+    }
+
+    const notes = formData.get("notes");
+    if (notes) {
+      data.notes = notes;
+    }
+
+    const visited = formData.get("visited");
+    if (visited) {
+      data.visited = visited;
+    }
 
     try {
       const response = await fetch("/api/restaurants", {
