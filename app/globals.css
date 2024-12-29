@@ -12,3 +12,23 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Style the InfoWindow to match header styling */
+.gm-style .gm-style-iw-c {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(4px) !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  max-width: 350px !important;
+  border-radius: 0.5rem !important;
+}
+
+/* Remove the default InfoWindow tail/arrow */
+.gm-style .gm-style-iw-t::after {
+  display: none !important;
+}
+
+.gm-style-iw-tc {
+  display: none !important;
+}

@@ -6,13 +6,13 @@ interface RestaurantCardProps {
 
 export function RestaurantCard({ restaurant }: RestaurantCardProps) {
   return (
-    <div className="p-2 rounded-lg hover:shadow-lg transition-shadow">
-      <h2 className="text-xl font-semibold text-black">{restaurant.name}</h2>
-      <p className="text-black ">{restaurant.address}</p>
+    <div className="p-2 rounded-lg hover:shadow-lg transition-shadow bg-black/50 backdrop-blur-sm">
+      <h2 className="text-xl font-semibold text-white">{restaurant.name}</h2>
+      <p className="text-white">{restaurant.address}</p>
       <div className="mt-2 space-y-1">
-        <p className="text-sm text-black italic">{restaurant.notes}</p>
-        <p className="text-sm text-black">Score: {restaurant.score}/10</p>
-        <p className="text-sm text-black">Visited: {restaurant.visited}</p>
+        <p className="text-sm text-white italic">{restaurant.notes}</p>
+        <p className="text-sm text-white">Score: {restaurant.score}/10</p>
+        <p className="text-sm text-white">Visited: {restaurant.visited}</p>
         <div className="flex justify-end">
           <a
             href={restaurant.maps_url}
