@@ -7,17 +7,21 @@ interface RestaurantCardProps {
 export function RestaurantCard({ restaurant }: RestaurantCardProps) {
   return (
     <div className="py-2 px-4 rounded-lg hover:shadow-lg">
-      <h2 className="text-xl font-semibold text-white text-center">{restaurant.name}</h2>
+      <h2 className="text-xl font-semibold text-white text-center">
+        {restaurant.name}
+      </h2>
       <div className="mt-2 space-y-1">
         <div className="p-2 bg-white/10 rounded-lg">
-          <p className="text-sm text-white font-medium text-center">{restaurant.notes}</p>
+          <p className="text-sm text-white font-medium text-center">
+            {restaurant.notes}
+          </p>
         </div>
         <div className="space-y-1 text-center">
           <p className="text-sm text-white font-medium">
-            {Array(restaurant.score).fill("🍕").join("")}
+            Score: {restaurant.score}/5
           </p>
           <p className="text-sm text-white font-medium">
-            Score: {restaurant.score}/5
+            {Array(restaurant.score).fill("🍕").join("")}
           </p>
         </div>
         {restaurant.visited && (
