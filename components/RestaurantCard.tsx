@@ -10,10 +10,8 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
       <h2 className="text-xl font-semibold text-black">{restaurant.name}</h2>
       <p className="text-black">{restaurant.address}</p>
       <div className="mt-2 space-y-1">
-        <div className="flex justify-between items-center">
-          <p className="text-sm text-black">Score: {restaurant.score}/10</p>
-          <p className="text-sm text-black">Visited: {restaurant.visited}</p>
-        </div>
+        <p className="text-sm text-black">Score: {restaurant.score}/10</p>
+        <p className="text-sm text-black">Visited: {restaurant.visited}</p>
         <div className="flex justify-end">
           <a
             href={restaurant.maps_url}
