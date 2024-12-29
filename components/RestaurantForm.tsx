@@ -180,6 +180,13 @@ export default function RestaurantForm() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {process.env.NEXT_PUBLIC_DEV_MODE === 'true' && (
+        <div className="col-span-full">
+          <div className="bg-yellow-500/20 text-yellow-300 px-4 py-2 rounded-lg mb-4">
+            Development Mode: Changes will be written directly to restaurants.yaml
+          </div>
+        </div>
+      )}
       <form ref={formRef} onSubmit={onSubmit} className="space-y-4 relative">
         <div className="space-y-4 mb-8">
           <div>
