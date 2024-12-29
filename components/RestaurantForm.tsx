@@ -60,12 +60,8 @@ export default function RestaurantForm() {
       console.log('Place details response:', data);
       
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to fetch place details');
+        throw new Error(data.error || 'Failed to fetch place details');
       }
-      
-      const data = await response.json();
-      console.log('Place details full response:', data);
 
       if (!data.results?.length) {
         throw new Error('No results found for this place');
