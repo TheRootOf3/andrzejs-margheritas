@@ -94,7 +94,7 @@ export default function Map({ restaurants }: MapProps) {
               position={restaurant.coordinates}
               title={restaurant.name}
               onClick={() => setSelectedRestaurant(restaurant)}
-              icon={getMarkerIcon(restaurant)}
+              icon={getMarkerIcon(restaurant) || undefined}
             />
           ))}
 
