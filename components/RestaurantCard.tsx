@@ -12,7 +12,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
       <div className="mt-2 space-y-1">
         <div className="flex justify-between items-center">
           <p className="text-sm">Score: {restaurant.score}/10</p>
-          <p className="text-sm text-gray-500">Visited: {restaurant.visited}</p>
+          <p className="text-sm ">Visited: {restaurant.visited}</p>
         </div>
         <div className="flex justify-end">
           <a
