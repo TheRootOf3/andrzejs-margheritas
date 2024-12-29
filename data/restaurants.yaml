@@ -32,3 +32,9 @@ restaurants:
     score: 5
     notes: Fantastic Neapolitan pizza, really big portions!
     visited: '2024-12-29'
+  - name: Sdfsdf
+    address: 15 Rue des Petits Champs, 75001 Paris, France
+    coordinates:
+      lat: 48.86633550000001
+      lng: 2.3381141
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJc4vJjy1v5kcRV5QsaPbYvmw
