@@ -11,10 +11,10 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-4 left-4 z-10">
+    <div className="fixed bottom-4 left-4 z-10 w-[calc(100%-2rem)] sm:w-auto min-w-[280px] max-w-[90vw]">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-white rounded-lg px-4 py-2 w-full text-left"
+        className="text-white rounded-lg px-4 py-3 w-full text-left touch-manipulation"
         style={{
           background: "rgba(0, 0, 0, 0.6)",
           backdropFilter: "blur(4px)",
@@ -27,7 +27,7 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
       
       {isOpen && (
         <div
-          className="mt-2 rounded-lg p-4 max-h-[60vh] overflow-y-auto"
+          className="mt-2 rounded-lg p-4 max-h-[50vh] sm:max-h-[60vh] overflow-y-auto"
           style={{
             background: "rgba(0, 0, 0, 0.6)",
             backdropFilter: "blur(4px)",
