@@ -42,7 +42,7 @@ export default function Map({ restaurants }: MapProps) {
       restaurants.forEach((restaurant) => {
         bounds.extend(restaurant.coordinates);
       });
-      map.fitBounds(bounds, { padding: 50 });
+      map.fitBounds(bounds);
     }
   }, [map, showAllRestaurants, restaurants]);
 
