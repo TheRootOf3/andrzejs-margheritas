@@ -1,4 +1,13 @@
 restaurants:
+  - name: Boccanera | Ristorante Pizzeria
+    address: Swietego Tomasza 15, 31-018 Krakow, Poland
+    coordinates:
+      lat: 50.06296369999999
+      lng: 19.9389115
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJB1bnIA5bFkcRpZQH81QYa4U
+    score: 3
+    notes: Neither fast-food, nor proper Neapolitan pizza. Dull knives.
+    visited: '2024-12-28'
   - name: Franco Manca Covent Garden
     address: 39 Maiden Ln, London WC2E 7LJ, UK
     coordinates:
