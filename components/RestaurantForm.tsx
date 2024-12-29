@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import FormMap from "./FormMap";
 import { useRouter } from "next/navigation";
 
@@ -18,6 +18,7 @@ interface PlaceResult {
 
 export default function RestaurantForm() {
   const router = useRouter();
+  const formRef = useRef<HTMLFormElement>(null);
   const [error, setError] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState("");
   const [predictions, setPredictions] = useState<
@@ -163,7 +164,7 @@ export default function RestaurantForm() {
       window.open(responseData.prUrl, '_blank');
       
       // Reset form
-      event.currentTarget.reset();
+      formRef.current?.reset();
       setSelectedLocation(null);
       
       // Redirect to home page after a short delay
@@ -179,7 +180,7 @@ export default function RestaurantForm() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <form onSubmit={onSubmit} className="space-y-4 relative">
+      <form ref={formRef} onSubmit={onSubmit} className="space-y-4 relative">
         <div className="space-y-4 mb-8">
           <div>
             <label htmlFor="search" className="block text-sm font-medium mb-1">
