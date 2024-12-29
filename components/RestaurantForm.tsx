@@ -103,7 +103,7 @@ export default function RestaurantForm() {
             name="lng"
             step="any"
             required
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
           />
         </div>
       </div>
