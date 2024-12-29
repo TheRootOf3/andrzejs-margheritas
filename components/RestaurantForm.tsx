@@ -140,12 +140,12 @@ export default function RestaurantForm() {
       data.score = parseFloat(score as string);
     }
 
-    const notes = formData.get("notes");
+    const notes = formData.get("notes") as string;
     if (notes) {
       data.notes = notes;
     }
 
-    const visited = formData.get("visited");
+    const visited = formData.get("visited") as string;
     if (visited) {
       data.visited = visited;
     }
