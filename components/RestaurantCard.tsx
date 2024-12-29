@@ -12,10 +12,14 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
         <div className="p-2 bg-white/10 rounded-lg">
           <p className="text-sm text-white font-medium text-center">{restaurant.notes}</p>
         </div>
-        <p className="text-sm text-white font-medium text-center">
-          {Array(restaurant.score).fill("🍕").join("")} Score:{" "}
-          {restaurant.score}/5{" "}
-        </p>
+        <div className="space-y-1 text-center">
+          <p className="text-sm text-white font-medium">
+            {Array(restaurant.score).fill("🍕").join("")}
+          </p>
+          <p className="text-sm text-white font-medium">
+            Score: {restaurant.score}/5
+          </p>
+        </div>
         {restaurant.visited && (
           <p className="text-sm text-white font-medium text-center">
             📅 Visited: {restaurant.visited}
