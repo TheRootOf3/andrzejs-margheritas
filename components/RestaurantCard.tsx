@@ -16,9 +16,11 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
         <p className="text-sm text-white font-medium">
           Score: {restaurant.score}/10
         </p>
-        <p className="text-sm text-white font-medium">
-          Visited: {restaurant.visited}
-        </p>
+        {restaurant.visited && (
+          <p className="text-sm text-white font-medium">
+            Visited: {restaurant.visited}
+          </p>
+        )}
         <div className="flex justify-end mt-2">
           <a
             href={restaurant.maps_url}
