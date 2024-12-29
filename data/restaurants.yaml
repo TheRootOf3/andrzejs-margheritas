@@ -32,3 +32,9 @@ restaurants:
     score: 5
     notes: Fantastic Neapolitan pizza, really big portions!
     visited: '2024-12-29'
+  - name: the Design Museum
+    address: 224-238 Kensington High St, London W8 6AG, UK
+    coordinates:
+      lat: 51.4998973
+      lng: -0.2002439999999999
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJs0HnpkcDdkgRJjUYVf4jca4
