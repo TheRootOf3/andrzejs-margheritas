@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     if (process.env.NEXT_PUBLIC_DEV_MODE === 'true') {
       const filePath = join(process.cwd(), 'data', 'restaurants.yaml');
       const currentContent = readFileSync(filePath, 'utf8');
-      let data = load(currentContent) as { restaurants: Restaurant[] };
+      const data = load(currentContent) as { restaurants: Restaurant[] };
       
       if (!data.restaurants) {
         data.restaurants = [];
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
 
     // Decode current content
     const currentContent = Buffer.from(fileData.content, 'base64').toString();
-    let data = load(currentContent) as { restaurants: Restaurant[] };
+    const data = load(currentContent) as { restaurants: Restaurant[] };
     if (!data.restaurants) {
       data.restaurants = [];
     }
