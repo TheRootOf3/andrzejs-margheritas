@@ -24,6 +24,7 @@ export default function RestaurantForm() {
     Array<{ place_id: string; description: string }>
   >([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState<{
     lat: number;
     lng: number;
@@ -109,6 +110,7 @@ export default function RestaurantForm() {
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
+    setIsSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
     const data: any = {
@@ -146,16 +148,32 @@ export default function RestaurantForm() {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to submit restaurant");
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to submit restaurant");
       }
 
-      const data = await response.json();
+      const responseData = await response.json();
       router.refresh();
+      
+      // Show success message
+      setError("");
+      alert(`Restaurant added successfully! A pull request has been created.\n\nYou can view it at: ${responseData.prUrl}`);
+      
       // Open the PR URL in a new tab
-      window.open(data.prUrl, '_blank');
-      router.push("/");
+      window.open(responseData.prUrl, '_blank');
+      
+      // Reset form
+      event.currentTarget.reset();
+      setSelectedLocation(null);
+      
+      // Redirect to home page after a short delay
+      setTimeout(() => {
+        router.push("/");
+      }, 1500);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -278,9 +296,19 @@ export default function RestaurantForm() {
 
         <button
           type="submit"
-          className="bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg transition-colors font-marker"
+          disabled={isSubmitting}
+          className={`bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg transition-colors font-marker flex items-center justify-center ${
+            isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
         >
-          Add Restaurant
+          {isSubmitting ? (
+            <>
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+              Creating PR...
+            </>
+          ) : (
+            'Add Restaurant'
+          )}
         </button>
       </form>
 
