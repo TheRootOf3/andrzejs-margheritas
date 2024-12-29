@@ -1,10 +1,9 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import { Restaurant } from "@/lib/loadRestaurants";
-import { writeFileSync } from "fs";
-import { load } from "js-yaml";
-import { join } from "path";
-import { readFileSync } from "fs";
+import { load, dump } from "js-yaml";
+import { Octokit } from "@octokit/rest";
+import { encode } from "base-64";
 
 export async function POST(request: Request) {
   const session = await getServerSession(authOptions);
@@ -21,19 +20,24 @@ export async function POST(request: Request) {
       return new Response("Invalid restaurant data", { status: 400 });
     }
 
-    // Read existing restaurants or create new data structure
-    const filePath = join(process.cwd(), 'data', 'restaurants.yaml');
-    let data: { restaurants: Restaurant[] };
-    
-    try {
-      const fileContents = readFileSync(filePath, 'utf8');
-      data = load(fileContents) as { restaurants: Restaurant[] };
-      if (!data.restaurants) {
-        data.restaurants = [];
-      }
-    } catch (error) {
-      // If file doesn't exist or is empty, create new data structure
-      data = { restaurants: [] };
+    // Initialize Octokit with GitHub token
+    const octokit = new Octokit({
+      auth: process.env.GITHUB_TOKEN,
+    });
+
+    // Get current content of restaurants.yaml
+    const { data: fileData } = await octokit.repos.getContent({
+      owner: process.env.GITHUB_OWNER!,
+      repo: process.env.GITHUB_REPO!,
+      path: 'data/restaurants.yaml',
+      ref: 'main'
+    });
+
+    // Decode current content
+    const currentContent = Buffer.from(fileData.content, 'base64').toString();
+    let data = load(currentContent) as { restaurants: Restaurant[] };
+    if (!data.restaurants) {
+      data.restaurants = [];
     }
     
     // Add new restaurant
@@ -42,33 +46,60 @@ export async function POST(request: Request) {
     // Sort restaurants by name
     data.restaurants.sort((a, b) => a.name.localeCompare(b.name));
     
-    // Write back to file
-    const yamlStr = `restaurants:\n${data.restaurants
-      .map(r => {
-        let yaml = `  - name: "${r.name}"
-    address: "${r.address}"
-    coordinates:
-      lat: ${r.coordinates.lat}
-      lng: ${r.coordinates.lng}
-    maps_url: "${r.maps_url}"`;
-        
-        if (r.score !== undefined) {
-          yaml += `\n    score: ${r.score}`;
-        }
-        if (r.notes) {
-          yaml += `\n    notes: "${r.notes}"`;
-        }
-        if (r.visited) {
-          yaml += `\n    visited: "${r.visited}"`;
-        }
-        
-        return yaml;
-      })
-      .join("\n\n")}`;
+    // Create a new branch
+    const branchName = `add-restaurant-${Date.now()}`;
+    const mainRef = await octokit.git.getRef({
+      owner: process.env.GITHUB_OWNER!,
+      repo: process.env.GITHUB_REPO!,
+      ref: 'heads/main',
+    });
 
-    writeFileSync(filePath, yamlStr);
+    await octokit.git.createRef({
+      owner: process.env.GITHUB_OWNER!,
+      repo: process.env.GITHUB_REPO!,
+      ref: `refs/heads/${branchName}`,
+      sha: mainRef.data.object.sha,
+    });
 
-    return new Response("Restaurant added successfully", { status: 200 });
+    // Generate new YAML content
+    const yamlContent = dump({ restaurants: data.restaurants });
+
+    // Create commit with new content
+    await octokit.repos.createOrUpdateFileContents({
+      owner: process.env.GITHUB_OWNER!,
+      repo: process.env.GITHUB_REPO!,
+      path: 'data/restaurants.yaml',
+      message: `Add restaurant: ${newRestaurant.name}`,
+      content: encode(yamlContent),
+      branch: branchName,
+      sha: (fileData as any).sha,
+    });
+
+    // Create pull request
+    const pr = await octokit.pulls.create({
+      owner: process.env.GITHUB_OWNER!,
+      repo: process.env.GITHUB_REPO!,
+      title: `Add restaurant: ${newRestaurant.name}`,
+      head: branchName,
+      base: 'main',
+      body: `Adding new restaurant:
+      
+- Name: ${newRestaurant.name}
+- Address: ${newRestaurant.address}
+${newRestaurant.score !== undefined ? `- Score: ${newRestaurant.score}/5` : ''}
+${newRestaurant.notes ? `- Notes: ${newRestaurant.notes}` : ''}
+${newRestaurant.visited ? `- Visited: ${newRestaurant.visited}` : ''}`,
+    });
+
+    return new Response(JSON.stringify({ 
+      message: "Pull request created successfully",
+      prUrl: pr.data.html_url 
+    }), { 
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
   } catch (error) {
     console.error("Error adding restaurant:", error);
     return new Response("Error adding restaurant", { status: 500 });

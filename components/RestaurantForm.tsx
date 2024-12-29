@@ -149,7 +149,10 @@ export default function RestaurantForm() {
         throw new Error("Failed to submit restaurant");
       }
 
+      const data = await response.json();
       router.refresh();
+      // Open the PR URL in a new tab
+      window.open(data.prUrl, '_blank');
       router.push("/");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
