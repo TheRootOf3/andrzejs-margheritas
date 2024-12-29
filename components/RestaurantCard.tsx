@@ -24,7 +24,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
             href={restaurant.maps_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium inline-flex items-center gap-1"
+            className="bg-gray-500/50 hover:bg-gray-600/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium inline-flex items-center gap-1"
           >
             View on Maps
             <span aria-hidden="true">→</span>
