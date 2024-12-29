@@ -66,7 +66,14 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
                 onClick={() => setMapFocus(restaurant.coordinates)}
               >
                 <div>
-                  <div className="font-marker">{restaurant.name}</div>
+                  <div className="font-marker">
+                    {restaurant.name}
+                    {restaurant.score && (
+                      <span className="ml-2">
+                        {Array(restaurant.score).fill("🍕").join("")}
+                      </span>
+                    )}
+                  </div>
                   <div className="text-sm text-gray-300">{restaurant.address}</div>
                 </div>
                 <a
