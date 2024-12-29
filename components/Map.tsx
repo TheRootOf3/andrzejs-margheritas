@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { RestaurantCard } from "@/components/RestaurantCard";
 import {
   GoogleMap,
   LoadScript,
@@ -77,26 +78,7 @@ export default function Map({ restaurants }: MapProps) {
             position={selectedRestaurant.coordinates}
             onCloseClick={() => setSelectedRestaurant(null)}
           >
-            <div className="p-2 max-w-xs text-black">
-              <h2 className="font-bold text-lg">{selectedRestaurant.name}</h2>
-              <p className="text-sm mt-1">{selectedRestaurant.address}</p>
-              <p className="text-sm mt-1">
-                Score: {selectedRestaurant.score}/10
-              </p>
-              {selectedRestaurant.notes && (
-                <p className="text-sm mt-1 italic">
-                  {selectedRestaurant.notes}
-                </p>
-              )}
-              <a
-                href={selectedRestaurant.maps_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-blue-600 hover:text-blue-800 mt-2 block"
-              >
-                View on Google Maps
-              </a>
-            </div>
+            <RestaurantCard restaurant={selectedRestaurant} />
           </InfoWindow>
         )}
       </GoogleMap>
