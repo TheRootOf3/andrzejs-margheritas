@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic';
 import { Restaurant } from '@/lib/loadRestaurants';
 
-const ClientMap = dynamic(() => import('./ClientMap').then(mod => mod.ClientMap), {
-  ssr: false
-});
+const ClientMap = dynamic(
+  () => import('./ClientMap').then((mod) => mod.ClientMap),
+  { loading: () => <div>Loading map...</div>, ssr: false }
+);
 
 interface MapProps {
   restaurants: Restaurant[];
@@ -11,6 +12,6 @@ interface MapProps {
   zoom?: number;
 }
 
-export function Map(props: MapProps) {
+export default function Map(props: MapProps) {
   return <ClientMap {...props} />;
 }
