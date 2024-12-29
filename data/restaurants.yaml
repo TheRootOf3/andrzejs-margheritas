@@ -29,6 +29,16 @@ restaurants:
     score: 8.8
     notes: "Famous Naples pizzeria's London branch"
 
+  - name: "Pizza Express Live Holborn"
+    address: "99 High Holborn, London WC1V 6LF, UK"
+    coordinates:
+      lat: 51.51791
+      lng: -0.1187016
+    maps_url: "https://www.google.com/maps/place/?q=place_id:ChIJeyhymTUbdkgRuFUqBPIA1Ys"
+    group: "df"
+    score: 3
+    notes: "df"
+
   - name: "Pizza Pilgrims"
     address: "11 Dean St, London W1D 3RP"
     coordinates:
