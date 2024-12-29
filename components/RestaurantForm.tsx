@@ -244,7 +244,6 @@ export default function RestaurantForm() {
           <textarea
             id="notes"
             name="notes"
-            required
             className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
             rows={3}
           />
@@ -258,7 +257,6 @@ export default function RestaurantForm() {
             type="date"
             id="visited"
             name="visited"
-            required
             className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
           />
         </div>
