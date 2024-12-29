@@ -42,7 +42,8 @@ export async function POST(request: Request) {
     maps_url: "${r.maps_url}"
     group: "${r.group}"
     score: ${r.score}
-    notes: "${r.notes}"`)
+    notes: "${r.notes}"
+    visited: "${r.visited}"`)
       .join("\n\n")}`;
 
     writeFileSync(filePath, yamlStr);
@@ -65,6 +66,8 @@ function isValidRestaurant(data: any): data is Restaurant {
     typeof data.score === "number" &&
     data.score >= 0 &&
     data.score <= 10 &&
-    typeof data.notes === "string"
+    typeof data.notes === "string" &&
+    typeof data.visited === "string" &&
+    /^\d{4}-\d{2}-\d{2}$/.test(data.visited)
   );
 }

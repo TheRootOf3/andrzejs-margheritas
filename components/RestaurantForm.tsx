@@ -109,6 +109,7 @@ export default function RestaurantForm() {
       group: formData.get("group"),
       score: parseFloat(formData.get("score") as string),
       notes: formData.get("notes"),
+      visited: formData.get("visited") as string,
     };
 
     try {
@@ -250,6 +251,19 @@ export default function RestaurantForm() {
           required
           className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
           rows={3}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="visited" className="block text-sm font-medium mb-1">
+          Date Visited
+        </label>
+        <input
+          type="date"
+          id="visited"
+          name="visited"
+          required
+          className="w-full p-2 border rounded bg-white/10 backdrop-blur-sm border-white/20 text-white focus:outline-none focus:border-white/40"
         />
       </div>
 

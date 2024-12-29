@@ -13,6 +13,7 @@ export interface Restaurant {
   group: string;
   score: number;
   notes: string;
+  visited: string; // ISO date string format (YYYY-MM-DD)
 }
 
 interface RestaurantsData {
