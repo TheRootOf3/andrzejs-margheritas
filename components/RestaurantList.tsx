@@ -2,6 +2,7 @@
 
 import { Restaurant } from "@/lib/loadRestaurants";
 import { useState } from "react";
+import { useMapContext } from "@/contexts/MapContext";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
 interface RestaurantListProps {
@@ -10,6 +11,7 @@ interface RestaurantListProps {
 
 export default function RestaurantList({ restaurants }: RestaurantListProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { setMapFocus } = useMapContext();
 
   return (
     <div className="fixed bottom-4 left-4 z-10 min-w-[280px] max-w-[90vw]">
@@ -43,7 +45,12 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
         >
           <ul className="space-y-2">
             {restaurants.map((restaurant, index) => (
-              <li key={index} className="text-white">
+              <li
+                key={index}
+                className="text-white"
+                onMouseEnter={() => setMapFocus(restaurant.coordinates)}
+                onMouseLeave={() => setMapFocus(defaultCenter)}
+              >
                 <a
                   href={restaurant.maps_url}
                   target="_blank"

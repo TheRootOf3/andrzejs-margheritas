@@ -1,4 +1,5 @@
 import Map from "@/components/Map";
+import { MapProvider } from "@/contexts/MapContext";
 import Navigation from "@/components/Navigation";
 import RestaurantList from "@/components/RestaurantList";
 import { loadRestaurants } from "@/lib/loadRestaurants";
@@ -7,7 +8,8 @@ export default function Home() {
   const restaurants = loadRestaurants();
 
   return (
-    <main className="relative">
+    <MapProvider>
+      <main className="relative">
       <Navigation />
       <div className="absolute left-1/2 -translate-x-1/2 top-16 z-10">
         <div
@@ -27,6 +29,7 @@ export default function Home() {
       </div>
       <Map restaurants={restaurants} />
       <RestaurantList restaurants={restaurants} />
-    </main>
+      </main>
+    </MapProvider>
   );
 }

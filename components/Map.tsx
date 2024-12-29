@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { useMapContext } from "@/contexts/MapContext";
 import { RestaurantCard } from "@/components/RestaurantCard";
 import {
   GoogleMap,
@@ -15,7 +16,7 @@ const containerStyle = {
   height: "100vh",
 };
 
-const center = {
+const defaultCenter = {
   lat: 51.515,
   lng: -0.135,
 };
@@ -25,6 +26,7 @@ interface MapProps {
 }
 
 export default function Map({ restaurants }: MapProps) {
+  const { focusedCoordinates } = useMapContext();
   const [selectedRestaurant, setSelectedRestaurant] =
     useState<Restaurant | null>(null);
 
@@ -79,8 +81,13 @@ export default function Map({ restaurants }: MapProps) {
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center}
-        zoom={13}
+        center={focusedCoordinates || defaultCenter}
+        zoom={focusedCoordinates ? 16 : 13}
+        options={{
+          streetViewControl: false,
+          gestureHandling: "greedy",
+          animation: google.maps.Animation.SMOOTH,
+        }}
         onLoad={onLoad}
         options={{
           streetViewControl: false,
