@@ -50,23 +50,8 @@ export default function Map({ restaurants }: MapProps) {
     (restaurant: Restaurant) => {
       if (!map) return null;
 
-      const isPerfectScore = restaurant.score === 5;
-      const svgSize = isPerfectScore ? 80 : 52;
+      const svgSize = 52;
       const centerPoint = svgSize / 2;
-
-      let additionalPizzas = "";
-      if (isPerfectScore) {
-        // Add 5 small pizzas in a circle around the main one
-        const radius = 28;
-        for (let i = 0; i < 5; i++) {
-          const angle = (i * 2 * Math.PI) / 5;
-          const x = centerPoint + radius * Math.cos(angle);
-          const y = centerPoint + radius * Math.sin(angle);
-          additionalPizzas += `<text y="${
-            y + 4
-          }" x="${x}" font-size="16" text-anchor="middle">🍕</text>`;
-        }
-      }
 
       return {
         url: `data:image/svg+xml,${encodeURIComponent(
@@ -77,8 +62,8 @@ export default function Map({ restaurants }: MapProps) {
           }" stroke="white" stroke-width="2" fill="rgba(0, 0, 0, 0.5)"/>
           <text y="${
             centerPoint + 10
-          }" x="${centerPoint}" font-size="32" text-anchor="middle">🍕</text>
-          ${additionalPizzas}
+          }" x="${centerPoint}" font-size="30" text-anchor="middle">🍕</text>
+          
         </svg>`
         )}`,
         scaledSize: new google.maps.Size(svgSize, svgSize),
