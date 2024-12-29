@@ -6,8 +6,10 @@ export default function Home() {
   
   return (
     <main className="relative">
-      <div className="absolute top-0 left-0 right-0 z-10 bg-black/50 backdrop-blur-sm">
-        <h1 className="text-5xl text-center py-8 font-marker text-white">Andrzej&apos;s Margheritas</h1>
+      <div className="absolute left-1/2 -translate-x-1/2 top-8 z-10">
+        <h1 className="text-5xl px-12 py-8 font-marker text-white bg-black/50 backdrop-blur-sm rounded-lg">
+          Andrzej&apos;s Margheritas
+        </h1>
       </div>
       <Map restaurants={restaurants} />
     </main>
