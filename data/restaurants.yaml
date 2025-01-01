@@ -21,7 +21,7 @@ restaurants:
       lng: 19.9389115
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJB1bnIA5bFkcRpZQH81QYa4U
     score: 3
-    notes: Neither fast-food, nor proper Neapolitan pizza. Dull knives.
+    notes: Neither fast-food, nor proper Neapolitan pizza. Blunt knives.
     visited: '2024-12-28'
   - name: Boscaiola Restaurant
     address: Szewska 10, 31-009 Kraków, Poland
@@ -30,6 +30,8 @@ restaurants:
       lng: 19.9347704
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJdZ6mhQ5bFkcRUUGFNgZdKKA
     score: 3
+    notes: Okay. Neither fast-food, nor proper Neapolitan pizza.
+    visited: '2025-01-01'
   - name: Bürger's Moosach München
     address: Bunzlauer Str. 25, 80992 München, Germany
     coordinates:
