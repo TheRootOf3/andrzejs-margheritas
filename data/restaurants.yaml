@@ -184,6 +184,13 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJkbJLhA5bFkcR9dxapj9grYA
     score: 4
     notes: 'Interesting concept, where you can compose your own pizza from scratch! '
+  - name: Pizzeria Enzo
+    address: Krakowska 1, 32-065 Krzeszowice, Poland
+    coordinates:
+      lat: 50.1356189
+      lng: 19.6344454
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJ14KGmdnwFkcRVfdeWveMjj0
+    score: 3
   - name: Pizzeria Marco
     address: Polna 2, 32-080 Zabierzów, Poland
     coordinates:
