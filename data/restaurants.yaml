@@ -240,6 +240,13 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJMUvCdfsbdkgR8VpHxXjosEg
     score: 5
     notes: Fantastic Neapolitan pizza, really big portions!
+  - name: Three Joes Sourdough Pizza
+    address: 9 Great Minster St, Winchester SO23 9HA, UK
+    coordinates:
+      lat: 51.0620317
+      lng: -1.3153982
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJ986Lmb4NdEgRTfX7y9gS6Pw
+    score: 4
   - name: Zizzi - Coventry
     address: Cathedral Lanes Shopping Centre, Broadgate, Coventry CV1 1LL, UK
     coordinates:
