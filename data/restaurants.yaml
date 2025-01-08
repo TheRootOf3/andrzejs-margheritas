@@ -87,6 +87,13 @@ restaurants:
     notes: >-
       Truly the People's Pizzeria! Cheapest pizza in town, feeding me well
       during the undergrad 🎓
+  - name: Istanbul Pizzeria
+    address: Markt 22, 48683 Ahaus, Germany
+    coordinates:
+      lat: 52.07586999999999
+      lng: 7.007339000000001
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJ4Q39boRBuEcRdirnwz5sPAM
+    score: 3
   - name: Jacuzzi
     address: 94 Kensington High St, London W8 4SH, UK
     coordinates:
