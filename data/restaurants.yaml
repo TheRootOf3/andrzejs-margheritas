@@ -106,6 +106,15 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJpciweucPdkgRX65rI7oJ2IY
     score: 3
     notes: Okay but too elegant and poor price/quality ratio 💸
+  - name: La Pizzica
+    address: Unit 4 Eddington Ave, Cambridge CB3 1TT, UK
+    coordinates:
+      lat: 52.2184492
+      lng: 0.08714179999999999
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJYxHn_tN32EcR47llRX9kzzo
+    score: 5
+    notes: Really, really good Neapolitan pizza!
+    visited: '2025-03-14'
   - name: Mama Mia Pizza & Pasta
     address: G/F, 22 Possession St, Sheung Wan, Hong Kong
     coordinates:
