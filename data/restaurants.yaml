@@ -141,6 +141,17 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJFW4pGcQbdkgR-vy8ErudCyo
     score: 3
     notes: 'Open till late! '
+  - name: Oscar's Lockdown Pizza @ The Blue Moon
+    address: 2 Norfolk St, Cambridge CB1 2LF, UK
+    coordinates:
+      lat: 52.20480109999999
+      lng: 0.1365939
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJLUPXCdZx2EcRPEK3N2junIo
+    score: 3
+    notes: >-
+      Pretty good but not the best one in Cambridge! Came in the middle of the
+      pub quiz 🫣
+    visited: '2025-04-16'
   - name: Pasta Brown
     address: 31-32 Bedford St, London WC2E 9ED, UK
     coordinates:
