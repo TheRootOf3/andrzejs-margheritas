@@ -1,4 +1,13 @@
 restaurants:
+  - name: Alice Pizza Ostiense
+    address: Via Ostiense, 48, 00154 Roma RM, Italy
+    coordinates:
+      lat: 41.8721561
+      lng: 12.4798579
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJA0pdtytgLxMRedmKz5HCna8
+    score: 3
+    notes: Sliced to-go Rome-style pizza
+    visited: '2025-05-22'
   - name: Aromi Caffe and Pizzeria
     address: 1 Bene't St, Cambridge CB2 3QN, UK
     coordinates:
