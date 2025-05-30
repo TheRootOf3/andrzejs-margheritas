@@ -8,6 +8,15 @@ restaurants:
     score: 3
     notes: Sliced to-go Rome-style pizza
     visited: '2025-05-22'
+  - name: 50 Kalò di Ciro Salvo - Roma
+    address: Via Flavia, 3b, 00187 Roma RM, Italy
+    coordinates:
+      lat: 41.9060161
+      lng: 12.4957453
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJm-izlfFhLxMRPLKypi5mjjg
+    score: 4
+    notes: 'Good Neapolitan pizza compensating Emilka''s wet laptop 😬 '
+    visited: '2025-05-23'
   - name: Aromi Caffe and Pizzeria
     address: 1 Bene't St, Cambridge CB2 3QN, UK
     coordinates:
