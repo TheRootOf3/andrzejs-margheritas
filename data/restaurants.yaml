@@ -297,6 +297,17 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJMUvCdfsbdkgR8VpHxXjosEg
     score: 5
     notes: Fantastic Neapolitan pizza, really big portions!
+  - name: The Square Orange Café
+    address: 20 St John's St, Keswick CA12 5AS, UK
+    coordinates:
+      lat: 54.6000389
+      lng: -3.1359333
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJN9OPHGPbfEgRK7KukNlsHf4
+    score: 3
+    notes: >-
+      Good memories from the Lake District trip with great people! Pizza was
+      good. 
+    visited: '2025-08-31'
   - name: Three Joes Sourdough Pizza
     address: 9 Great Minster St, Winchester SO23 9HA, UK
     coordinates:
