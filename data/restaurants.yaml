@@ -159,6 +159,14 @@ restaurants:
     notes: >-
       Not bad but I was desperate and probably could eat anything at that point
       lol
+  - name: Mercato Mayfair
+    address: St. Mark's Church, N Audley St, London W1K 6ZA, UK
+    coordinates:
+      lat: 51.5131568
+      lng: -0.1528891
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJt9b00QkFdkgR0XKBTy2oTus
+    score: 4
+    notes: Good neapolitan
   - name: Nolio Restaurant
     address: Krakowska 27, 31-062 Kraków, Poland
     coordinates:
