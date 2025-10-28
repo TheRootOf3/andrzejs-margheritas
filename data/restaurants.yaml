@@ -69,6 +69,14 @@ restaurants:
       The sourdough pizza at the Buttery saved me maaany times. 4 for the
       vibes! 
     visited: '2025-03-16'
+  - name: Douce Heights
+    address: 37 Eddington Ave, Cambridge CB3 1SE, UK
+    coordinates:
+      lat: 52.2189012
+      lng: 0.08748539999999999
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJe2NFTgB32EcRBz07fRaK_8o
+    score: 4
+    notes: Oscar's Pizza, good but windy up there.
   - name: Franco Manca | Cambridge
     address: 15 Market Hill, Cambridge CB2 3NP, UK
     coordinates:
