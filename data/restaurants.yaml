@@ -69,6 +69,15 @@ restaurants:
       The sourdough pizza at the Buttery saved me maaany times. 4 for the
       vibes! 
     visited: '2025-03-16'
+  - name: Costco Wholesale
+    address: 2 Mystic View Rd, Everett, MA 02149, USA
+    coordinates:
+      lat: 42.3968978
+      lng: -71.0714924
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJRaCm2Blx44kRvTr7drPALC4
+    score: 3
+    notes: My first adult Costco experience.
+    visited: '2025-11-11'
   - name: Douce Heights
     address: 37 Eddington Ave, Cambridge CB3 1SE, UK
     coordinates:
