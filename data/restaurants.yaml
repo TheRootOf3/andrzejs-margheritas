@@ -167,6 +167,15 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJt9b00QkFdkgR0XKBTy2oTus
     score: 4
     notes: Good neapolitan
+  - name: Nenno Italian
+    address: 14, 16 Caledonian Rd, London N1 9DU, UK
+    coordinates:
+      lat: 51.531446
+      lng: -0.120751
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJc3jr2T4bdkgRM76kT7-2F-4
+    score: 2
+    notes: Completely tasteless...
+    visited: '2025-11-09'
   - name: Nolio Restaurant
     address: Krakowska 27, 31-062 Kraków, Poland
     coordinates:
