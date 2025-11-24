@@ -360,6 +360,15 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJMUvCdfsbdkgR8VpHxXjosEg
     score: 5
     notes: Fantastic Neapolitan pizza, really big portions!
+  - name: Sally's Apizza
+    address: 237 Wooster St, New Haven, CT 06511, USA
+    coordinates:
+      lat: 41.3030662
+      lng: -72.9200592
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJTyJZBzXY54kRd4BObqE0oO0
+    score: 4
+    notes: Good American pizza with good American company!
+    visited: '2025-11-14'
   - name: The Square Orange Café
     address: 20 St John's St, Keswick CA12 5AS, UK
     coordinates:
