@@ -1,4 +1,13 @@
 restaurants:
+  - name: 2 Bros Pizza
+    address: 557 8th Ave, New York, NY 10018, USA
+    coordinates:
+      lat: 40.7547065
+      lng: -73.9918986
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJ1x6n_axZwokRwVtestFkcV0
+    score: 2
+    notes: Cheesy $1.50 nyc slice!
+    visited: '2025-11-15'
   - name: 50 Kalò di Ciro Salvo - Roma
     address: Via Flavia, 3b, 00187 Roma RM, Italy
     coordinates:
