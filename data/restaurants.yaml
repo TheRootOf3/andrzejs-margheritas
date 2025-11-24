@@ -17,6 +17,15 @@ restaurants:
     score: 3
     notes: Sliced to-go Rome-style pizza
     visited: '2025-05-22'
+  - name: Area Four
+    address: 500 Technology Square, Cambridge, MA 02139, USA
+    coordinates:
+      lat: 42.3630936
+      lng: -71.09242549999999
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJKaXoBqxw44kRjXSBtvbq1j0
+    score: 3
+    notes: Decent American pizza
+    visited: '2025-11-13'
   - name: Aromi Caffe and Pizzeria
     address: 1 Bene't St, Cambridge CB2 3QN, UK
     coordinates:
