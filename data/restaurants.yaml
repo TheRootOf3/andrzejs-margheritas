@@ -96,6 +96,14 @@ restaurants:
     score: 3
     notes: My first adult Costco experience.
     visited: '2025-11-11'
+  - name: Domino's Pizza
+    address: 1017 N Ventura Ave, Ventura, CA 93001, USA
+    coordinates:
+      lat: 34.2927893
+      lng: -119.2976859
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJcTS3ll6s6YARMzaOUHwq-dg
+    score: 3
+    notes: Food for the last minute 2am Duolingo English test...
   - name: Douce Heights
     address: 37 Eddington Ave, Cambridge CB3 1SE, UK
     coordinates:
