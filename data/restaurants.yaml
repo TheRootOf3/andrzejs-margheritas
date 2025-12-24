@@ -175,6 +175,14 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJpciweucPdkgRX65rI7oJ2IY
     score: 3
     notes: Okay but too elegant and poor price/quality ratio 💸
+  - name: La Grillia Incheon Airport Boarding Building Branch
+    address: South Korea, Incheon, Jung-gu, Gonghang-ro, 272 3F 탑승동
+    coordinates:
+      lat: 37.4565108
+      lng: 126.4454092
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJD_RD_X6bezURFTyYYQfZATM
+    score: 3
+    notes: Sad pizza before the departute :(
   - name: La Pizzica
     address: Unit 4 Eddington Ave, Cambridge CB3 1TT, UK
     coordinates:
