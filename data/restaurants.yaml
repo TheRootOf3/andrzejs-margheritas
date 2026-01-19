@@ -379,6 +379,14 @@ restaurants:
       Mandatory pizza tasting after days of vegetarian Tagine… Tichka pass
       absolutely beautiful in winter! 
     visited: '2026-01-09'
+  - name: Rudy's Pizza Napoletana - Cambridge
+    address: 6 St Andrew's St, Cambridge CB2 3AX, UK
+    coordinates:
+      lat: 52.2046462
+      lng: 0.1220912
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJWUwmPMpx2EcRZTCdTpmd-6I
+    score: 4
+    notes: Good stuff, London knockoff ;)
   - name: Rudy's Pizza Napoletana - Tottenham Court Road
     address: 53-54 Tottenham Ct Rd, London W1T 2EQ, UK
     coordinates:
