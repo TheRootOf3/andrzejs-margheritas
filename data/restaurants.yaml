@@ -96,6 +96,15 @@ restaurants:
     score: 3
     notes: My first adult Costco experience.
     visited: '2025-11-11'
+  - name: Dola Jean's
+    address: 113 W 3rd St, Dover, OH 44622, USA
+    coordinates:
+      lat: 40.5221594
+      lng: -81.47728719999999
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJz1dntO3jNogR41i6WhtqsBU
+    score: 3
+    notes: 'Very chunky, good sized! '
+    visited: '2025-11-27'
   - name: Domino's Pizza
     address: 1017 N Ventura Ave, Ventura, CA 93001, USA
     coordinates:
