@@ -439,3 +439,12 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJT1jV_M9Ld0gRTBy71085UWU
     score: 2
     notes: meh
+  - name: 펍 마이마이 삼성점
+    address: South Korea, Seoul, Gangnam District, Bongeunsa-ro 84-gil, 30 1층, 2층
+    coordinates:
+      lat: 37.5114393
+      lng: 127.0561362
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJdwlgsjWlfDUR78MoT3V5M0s
+    score: 3
+    notes: ICML 26 Mechinterp social
+    visited: '2026-07-10'
