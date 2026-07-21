@@ -413,6 +413,15 @@ restaurants:
     score: 4
     notes: Good American pizza with good American company!
     visited: '2025-11-14'
+  - name: The Dainty Pizza
+    address: 67 Prom. Marie Paradis, 74400 Chamonix-Mont-Blanc, France
+    coordinates:
+      lat: 45.9192206
+      lng: 6.8677233
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJ2XpWQK5PiUcRP0VKj0PP3pY
+    score: 4
+    notes: Bday pizza! 🥳
+    visited: '2026-07-21'
   - name: The Square Orange Café
     address: 20 St John's St, Keswick CA12 5AS, UK
     coordinates:
