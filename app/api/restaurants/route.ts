@@ -1,5 +1,4 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
+import { getAdminSession } from "@/auth";
 import { Restaurant } from "@/lib/loadRestaurants";
 import { load, dump } from "js-yaml";
 import { Octokit } from "@octokit/rest";
@@ -7,7 +6,7 @@ import { writeFileSync, readFileSync } from "fs";
 import { join } from "path";
 
 export async function POST(request: Request) {
-  const session = await getServerSession(authOptions);
+  const session = await getAdminSession();
 
   if (!session) {
     return new Response("Unauthorized", { status: 401 });
