@@ -113,6 +113,14 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJcTS3ll6s6YARMzaOUHwq-dg
     score: 3
     notes: Food for the last minute 2am Duolingo English test...
+  - name: Domino's Pizza - Cambridge - Central
+    address: 34 Hills Rd, Cambridge CB2 1LA, UK
+    coordinates:
+      lat: 52.1972695
+      lng: 0.1290571
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJXRr1d5tw2EcR_-R9eOsatfg
+    score: 3
+    notes: research sprint grind
   - name: Domino's Pizza - Weymouth - Wyke Regis
     address: 112 Portland Rd, Weymouth DT4 9AD, UK
     coordinates:
