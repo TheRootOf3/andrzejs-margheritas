@@ -149,14 +149,23 @@ function isValidRestaurant(data: any): data is Restaurant {
     typeof str === "string" && str.trim() !== "";
   const isValidCoordinate = (value: any, limit: number) =>
     typeof value === "number" && Number.isFinite(value) && Math.abs(value) <= limit;
+  // Parse rather than prefix-match, so paths like /maps/../url are normalised before checking
+  const isGoogleMapsUrl = (value: any) => {
+    if (typeof value !== "string") return false;
+    try {
+      const url = new URL(value);
+      return url.protocol === "https:" && url.hostname === "www.google.com" && url.pathname.startsWith("/maps/");
+    } catch (_error) {
+      return false;
+    }
+  };
 
   return (
     isValidUnicodeString(data?.name) &&
     isValidUnicodeString(data.address) &&
     isValidCoordinate(data.coordinates?.lat, 90) &&
     isValidCoordinate(data.coordinates?.lng, 180) &&
-    typeof data.maps_url === "string" &&
-    data.maps_url.startsWith("https://www.google.com/maps/") &&
+    isGoogleMapsUrl(data.maps_url) &&
     (data.score === undefined || data.score === null || (typeof data.score === "number" && data.score >= 0 && data.score <= 5)) &&
     (data.notes === undefined || data.notes === null || isValidUnicodeString(data.notes)) &&
     (data.visited === undefined || data.visited === null || data.visited === "" || (typeof data.visited === "string" && /^\d{4}-\d{2}-\d{2}$/.test(data.visited)))
