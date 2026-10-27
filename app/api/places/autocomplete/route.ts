@@ -22,8 +22,9 @@ export async function GET(request: Request) {
     const response = await fetch(url);
     const data = await response.json();
     
-    if (!response.ok) {
-      throw new Error(`Google Places API error: ${data.error_message || 'Unknown error'}`);
+    // Google reports failures (e.g. REQUEST_DENIED) with HTTP 200, so check the status field too
+    if (!response.ok || (data.status !== 'OK' && data.status !== 'ZERO_RESULTS')) {
+      throw new Error(`Google Places API error: ${data.status} ${data.error_message || 'Unknown error'}`);
     }
 
     if (!data.predictions) {
