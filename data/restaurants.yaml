@@ -158,6 +158,14 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJyX4pr1cQW0cR0gGGSRnfjIQ
     score: 3
     notes: Good pizza, nice people.
+  - name: Hot Numbers Coffee | The Roastery | Shepreth
+    address: Hot Numbers Roastery, Dunsbridge Turnpike, Shepreth, Royston SG8 6RB, UK
+    coordinates:
+      lat: 52.0991783
+      lng: 0.0369598
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJuyumbfh_2EcR41JIUOOTcos
+    score: 4
+    visited: '2026-09-18'
   - name: ICCO - "The People's Pizzeria"
     address: 46 Goodge St, London W1T 4LU, UK
     coordinates:
