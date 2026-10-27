@@ -1,6 +1,12 @@
 import { NextResponse } from 'next/server';
+import { getAdminSession } from '@/auth';
 
 export async function GET(request: Request) {
+  // Each call is billed to our Google Places key, so only the admin may use it
+  if (!(await getAdminSession())) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const { searchParams } = new URL(request.url);
   const query = searchParams.get('query');
 
@@ -12,10 +18,11 @@ export async function GET(request: Request) {
     console.log('Fetching place details for query:', query);
     // If query starts with 'place_id:', use Place Details API instead of Text Search
     const isPlaceId = query.startsWith('place_id:');
+    // Request only the fields we use; without `fields` Google bills every data tier
     const url = isPlaceId
       ? `https://maps.googleapis.com/maps/api/place/details/json?place_id=${encodeURIComponent(
           query.replace('place_id:', '')
-        )}&key=${process.env.GOOGLE_PLACES_API_KEY}`
+        )}&fields=name,formatted_address,geometry,place_id&key=${process.env.GOOGLE_PLACES_API_KEY}`
       : `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(
           query
         )}&type=restaurant&key=${process.env.GOOGLE_PLACES_API_KEY}`;
@@ -51,9 +58,6 @@ export async function GET(request: Request) {
     }
   } catch (error) {
     console.error('Failed to fetch places:', error);
-    return NextResponse.json({ 
-      error: 'Failed to fetch places',
-      details: error instanceof Error ? error.message : 'Unknown error'
-    }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to fetch places' }, { status: 500 });
   }
 }

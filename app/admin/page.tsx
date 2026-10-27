@@ -1,12 +1,11 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
+import { getAdminSession } from "@/auth";
 import RestaurantForm from "@/components/RestaurantForm";
 import GoogleMapsProvider from "@/components/GoogleMapsProvider";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 
 export default async function AdminPage() {
-  const session = await getServerSession(authOptions);
+  const session = await getAdminSession();
   
   if (!session) {
     redirect("/api/auth/signin");

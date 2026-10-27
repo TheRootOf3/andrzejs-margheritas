@@ -1,6 +1,12 @@
 import { NextResponse } from 'next/server';
+import { getAdminSession } from '@/auth';
 
 export async function GET(request: Request) {
+  // Each call is billed to our Google Places key, so only the admin may use it
+  if (!(await getAdminSession())) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const { searchParams } = new URL(request.url);
   const input = searchParams.get('input');
 
@@ -27,9 +33,6 @@ export async function GET(request: Request) {
     return NextResponse.json(data);
   } catch (error) {
     console.error('Failed to fetch autocomplete suggestions:', error);
-    return NextResponse.json({ 
-      error: 'Failed to fetch suggestions',
-      details: error instanceof Error ? error.message : 'Unknown error'
-    }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to fetch suggestions' }, { status: 500 });
   }
 }
