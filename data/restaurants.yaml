@@ -113,6 +113,15 @@ restaurants:
     maps_url: https://www.google.com/maps/place/?q=place_id:ChIJcTS3ll6s6YARMzaOUHwq-dg
     score: 3
     notes: Food for the last minute 2am Duolingo English test...
+  - name: Domino's Pizza - Weymouth - Wyke Regis
+    address: 112 Portland Rd, Weymouth DT4 9AD, UK
+    coordinates:
+      lat: 50.5926617
+      lng: -2.4746273
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJw-N_xeD2ckgR9TPEVQU6C5w
+    score: 3
+    notes: ironman dominos
+    visited: '2026-09-19'
   - name: Douce Heights
     address: 37 Eddington Ave, Cambridge CB3 1SE, UK
     coordinates:
