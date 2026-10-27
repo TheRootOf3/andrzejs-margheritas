@@ -273,6 +273,14 @@ restaurants:
     notes: >-
       Great place, good to arrive there when it's about to open. Nice view at
       the top floor.
+  - name: Piu di pizza Zakopane
+    address: Tadeusza Kościuszki 10, 34-500 Zakopane, Poland
+    coordinates:
+      lat: 49.2953499
+      lng: 19.9537287
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJ71d6d-rzFUcRwY4icRvLIJg
+    score: 3
+    visited: '2026-08-27'
   - name: Pizza by Sartorelli's
     address: 21, Covered Market, Oxford OX1 3DZ, UK
     coordinates:
