@@ -8,7 +8,7 @@ export default async function AdminPage() {
   const session = await getAdminSession();
   
   if (!session) {
-    redirect("/api/auth/signin");
+    redirect("/api/auth/signin?callbackUrl=/admin");
   }
 
   return (
