@@ -13,12 +13,15 @@ export async function POST(request: Request) {
   }
 
   try {
-    const newRestaurant = await request.json();
-    
+    const body = await request.json();
+
     // Validate the restaurant data
-    if (!isValidRestaurant(newRestaurant)) {
+    if (!isValidRestaurant(body)) {
       return new Response("Invalid restaurant data", { status: 400 });
     }
+
+    // Keep only known fields so unexpected keys never reach restaurants.yaml
+    const newRestaurant = toRestaurant(body);
 
     // Handle development mode
     if (process.env.NEXT_PUBLIC_DEV_MODE === 'true') {
@@ -142,19 +145,42 @@ ${newRestaurant.visited ? `- Visited: ${newRestaurant.visited}` : ''}`,
 }
 
 function isValidRestaurant(data: any): data is Restaurant {
-  const isValidUnicodeString = (str: any) => 
+  const isValidUnicodeString = (str: any) =>
     typeof str === "string" && str.trim() !== "";
+  const isValidCoordinate = (value: any, limit: number) =>
+    typeof value === "number" && Number.isFinite(value) && Math.abs(value) <= limit;
 
   return (
-    isValidUnicodeString(data.name) &&
+    isValidUnicodeString(data?.name) &&
     isValidUnicodeString(data.address) &&
-    typeof data.coordinates?.lat === "number" &&
-    !isNaN(data.coordinates.lat) &&
-    typeof data.coordinates?.lng === "number" &&
-    !isNaN(data.coordinates.lng) &&
-    isValidUnicodeString(data.maps_url) &&
+    isValidCoordinate(data.coordinates?.lat, 90) &&
+    isValidCoordinate(data.coordinates?.lng, 180) &&
+    typeof data.maps_url === "string" &&
+    data.maps_url.startsWith("https://www.google.com/maps/") &&
     (data.score === undefined || data.score === null || (typeof data.score === "number" && data.score >= 0 && data.score <= 5)) &&
     (data.notes === undefined || data.notes === null || isValidUnicodeString(data.notes)) &&
     (data.visited === undefined || data.visited === null || data.visited === "" || (typeof data.visited === "string" && /^\d{4}-\d{2}-\d{2}$/.test(data.visited)))
   );
+}
+
+function toRestaurant(data: Restaurant): Restaurant {
+  const restaurant: Restaurant = {
+    name: data.name,
+    address: data.address,
+    coordinates: {
+      lat: data.coordinates.lat,
+      lng: data.coordinates.lng,
+    },
+    maps_url: data.maps_url,
+  };
+  if (typeof data.score === "number") {
+    restaurant.score = data.score;
+  }
+  if (data.notes) {
+    restaurant.notes = data.notes;
+  }
+  if (data.visited) {
+    restaurant.visited = data.visited;
+  }
+  return restaurant;
 }
