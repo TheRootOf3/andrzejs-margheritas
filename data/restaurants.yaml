@@ -253,6 +253,13 @@ restaurants:
     score: 3
     notes: bikey's bday pizza
     visited: '2026-10-09'
+  - name: Napoleat
+    address: 196 Cherry Hinton Rd, Cambridge CB1 7AN, UK
+    coordinates:
+      lat: 52.18748470000001
+      lng: 0.1461967
+    maps_url: https://www.google.com/maps/place/?q=place_id:ChIJkwbQoIZ72EcRPJa1F_-YLWA
+    score: 4
   - name: Nenno Italian
     address: 14, 16 Caledonian Rd, London N1 9DU, UK
     coordinates:
